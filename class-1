@@ -1,0 +1,394 @@
+class 1 - Intro, Sublime Text Usage, Terminal, JavaScript (variables, datatypes, conditionals, alerts/prompts/confirm, arrays)
+	OBJECTIVES:
+		1. Students will be able to recite what the MEAN stack consists of
+		2. Students will see what kind of apps they'll be able to build after the class
+		3. Students will be able to use the terminal to get around their computer and make files, folders
+			- using the terminal is an important skill when using Node.js and MongoDB. It's also important when putting your website online
+		4. Students will have the skills to make a rock paper scissor game with JavaScript prompts, conditionals, loops and basic datatypes (including: strings, numbers, booleans and arrays)
+
+	15 minutes - Intro - 
+		- about me, 
+		- course syllabus, 
+		- why come to class
+		- why you should come on time
+		- why use a mean stack
+		- jobs you can get with it + salary information
+		- what kind of apps you can make with it, etc 
+		- What you'll become after this class. 
+		- Who you'll become after this class.
+		- Tell students to start thinking of an app they want to build.
+		- MOST OF THE TIME Google has the answers - we'll work on getting good at googling your problems
+		- GO OVER OBJECTIVES
+
+	What is MEAN
+		MEAN is an acronym for mongoDB, express.js, angular.js and node.js. The course is designed to make all of these technologies EASY. Intimidated by math? Then don't worry, as long as you can add and subtract, then you'll be fine :)
+
+		MongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable. 
+
+		Express is a minimal and flexible node.js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications.
+
+		AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+
+		Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+
+	5 minutes I DO
+		Why learn the terminal? For one, when using node and express you use the terminal, and it's good to get used to it, because later on when you deploy your websites to the web, you'll end up using the terminal, so it's best to get used to this now :)
+
+		- give students this cheat sheet of terms on hand in slack
+
+		open .
+			- open's the current folder you are at in finder (for a mac)
+
+		open <file name>
+			- open a specific file - I believe it's only for a mac
+
+		pwd
+			- stands for present working directory - shows where you are on your computer
+		ls
+			- lists the files in a folder
+
+		cd <name of folder>
+			- let's you change directories (that's what it stands for)
+			- it's like you're clicking into that folder
+
+		cd ..
+			- let's you go to the previous directory
+
+		touch <filename>
+			- make a file where you are in the terminal
+
+		rm <filename>
+			- will delete a file permanently - won't be included in your trash
+
+		mkdir <folder name>
+			- make a folder where you are in the terminal
+
+		rm -rf <folder name>
+			- will delete a folder permanently - won't be included in your trash
+
+	5 minutes YOU DO
+		- using the terminal make a new folder on your desktop called made-from-the-terminal with two files in it: index.html and README.md
+
+	10 minutes I DO
+		- go to a folder manually
+			- open it up using sublime text (drag it into sublime text)
+			- this opens up the entire folder into sublime text
+			- sublime . (show them and make sure they understand it's a mac thing)
+
+		- in sublime text (give them all of this in chat) - then show them
+			- show word wrap, view sidebar (very important)
+			- show multiple cursors, ctrl left/ctrl right, highlight code + cmd d, cmd shift f - to mass search files, cmd p to grep through file names
+			- show the coding language select in the bottom right corner
+
+		- show how you can directly open up a file into chrome from sublime text
+
+	1 minute stretch
+
+	10 minutes we DO
+		- open up the made-from-the-terminal folder from your desktop in sublime text (DRAG AND DROP or USE THE TERMINAL)
+		- put in 'hello world' into both files and open up the index.html file into your browser from sublimetext
+
+	1 minute stretch
+
+	15 minutes I DO - use prompts/confirms, alerts/document.write, variables, strings/numbers/booleans, 
+		- go over taking in user input
+
+		- variables contain data (like my name is 'Pavan')
+
+		- variables can be initialized, then set
+
+		- if the variable is initialized, it's value is undefined
+			- you can do variable == undefined and it would be true
+				- undefined is a variable that's available in javascript on default (easy explaination)
+				- undefined is a variable that's available in global scope on default
+
+		- variables can be initialized and set in one go
+
+		- go over the different datatypes being used
+
+		- go over conditional logic 
+
+		- go over writing to the page
+
+			var userName = prompt("What's your name?");
+			var confirm = confirm('Do you like cats?');
+
+			var petName = 'Meeses';
+			var petType = 'tuxedo cat';
+			var petAge = 5;
+			var petIsCat = true;
+
+			if (confirm){
+				alert(petName + petType + petAge)
+			}else{
+				alert("You don't get my cat's information")
+			}
+
+			if (petIsCat == true){
+				alert('my pet is a cat')
+			}else{
+				alert('my pet is not a cat')
+			}
+
+			if (petAge !== 7){
+				alert('My pet is not 7 years old')
+			}
+
+			if (petAge == 5){
+				alert('My pet is 5 years old')
+			}elseif(petAge < 5){
+				alert('My pet is less than 5 years old')
+			}elseif(petAge > 5){
+				alert('My pet is older than 5 years old')
+			}
+
+			//this replaces the entire page with this - so it's not something you'll normally use - but it's what we'll use for now to be able to print stuff to the page
+			document.write('Welcome to our page ' + userName);
+
+			var catAge = prompt('how old is your cat?');
+
+			alert(catAge + 2); //won't work as expected
+
+			alert(parseInt(catAge) + 2); //works as expected
+
+	10 minutes we DO
+		- ask the user if they eat steak
+
+		- if they do then write the following to the screen: "Here's a steak sandwich!"
+		- if they don't then write the following to the screen: "Here's a tofu stir fry!"
+
+		/*
+			BONUS: additionally ask the user what their birthyear is. If it's greater than 1987, alert to the screen that "you're older than Pavan". If it's smaller than 1987, then alert to the screen that "you're younger than Pavan". If it's equal to 1987, then alert "you're around the same age as Pavan" to the screen.
+		*/
+
+			solution:
+
+			//exercise
+			var eatSteak = confirm("do you eat steak?");
+			if (eatSteak){
+				document.write("Here's a steak");
+			}else{
+				document.write("Here's a tofu stir fry!");
+			}
+
+			//bonus
+			var year = prompt('What year were you born?');
+
+			var year = parseInt(year);
+
+			if (year > 1987){
+				alert("you're older than Pavan");
+			}elseif(year < 1987){
+				alert("you're younger than Pavan");
+			}else{
+				alert("you're around the same age as Pavan");
+			}
+
+			//alternatively you can do a switch statement:
+
+			switch (new Date().getDay()) {
+			    case 0:
+			        day = "Sunday";
+			        break;
+			    case 1:
+			        day = "Monday";
+			        break;
+			    case 2:
+			        day = "Tuesday";
+			        break;
+			    case 3:
+			        day = "Wednesday";
+			        break;
+			    case 4:
+			        day = "Thursday";
+			        break;
+			    case 5:
+			        day = "Friday";
+			        break;
+			    case 6:
+			        day = "Saturday";
+			        break;
+			}
+
+
+	10 minutes we Do (message me your answers)
+		- exercise regarding strings, numbers and booleans, conditional logic
+
+		if (true == true){
+			alert('hi')
+		}else{
+			alert('bye')
+		}
+
+		if (false == false){
+			alert('dude')
+		}else{
+			alert('nope')
+		}
+
+		if ("4" == 4){
+			alert('barnard')
+		}else{
+			alert('marford - I made this up')
+		}
+
+		if ("4" === 4){
+			alert('barnard')
+		}else{
+			alert('marford - I made this up')
+		}
+
+		if (true){
+			alert('goo goo dolls')
+		}else{
+			alert('vanilla ice')
+		}
+
+		if (false){
+			alert('the neighborhood')
+		}else{
+			alert('one direction')
+		}
+
+		if (("5" + "5") == "55"){
+			alert('tofu')
+		}else{
+			alert('soybean')
+		}
+
+		if ((6 + "5") == "65"){
+			alert('richard')
+		}else{
+			alert('branson')
+		}
+
+		Answers: 
+			goo goo dolls, one direction, tofu, richard
+
+	10 minutes I do (95 minutes)
+		- go over while loops
+
+		//1
+		var payingAttention = true;
+
+		while (payingAttention){
+			payingAttention = confirm('Are you paying attention _____?');
+		}
+
+		//ok ___ can you look at your phone - and stop paying attention - ____ is now not not paying attention
+
+		//2
+		var stockPrice = 10; //assume dollars
+
+		while (stockPrice >= 10){
+
+			stockPrice = confirm("What's YGE's stock price now?"); //won't work - why? Spend 2 minutes discussing this with your partner
+
+			if (stockPrice < 10){
+				alert('Sell!!!');
+			}
+		}
+
+		//Answer:
+		//wrap confirm in parseInt
+
+		//on a side note: isNaN(""); //checks if a value is a number or not - why not isNumber?... JavaScript
+
+	10 minutes we do (slack me your answers - if you don't, i'll assume you had trouble - and i'll be reaching out to help you)
+
+		- while loop exercise
+
+		//Problem 1
+			//ask the user for a number, if it's above 5, keep asking the user for a number, if not, then alert "you lost!!!"
+
+		//Problem 2
+			//ask the user for a letter
+
+			//if the letter is equal to either A, B, or C then keep going. If not then stop the loop. 
+
+			//make your program case insensitive by using toLowerCase() - go here: http://www.w3schools.com/jsref/jsref_tolowercase.asp
+
+		//Bonus using arrays (we haven't gone over this yet)
+			//start with this array 
+			//var pets = ["cats", "dogs", "rabbits"]
+
+			//ask the user to guess a type of animal
+				//if the animal is in the pets array then alert 'You won!'
+				// use the indexOf method http://www.w3schools.com/jsref/jsref_indexof_array.asp - the indexOf method returns -1 if it's not in the array
+
+	10 minutes I do (arrays)
+
+		lists
+			- animals, computers, trump
+
+		var animals = ['parrot', 'cat', 'dog'];
+
+		animals.length();
+
+		animals[1];
+
+		animals[2];
+
+		animals[animals.length()];
+		
+		animals[animals.length()-1];
+
+		animals.indexOf('bear'); 
+
+		animals.indexOf('parrot'); 
+
+		//check if something exists in an array or not
+		if (animals.indexOf('bear') == -1) {
+			alert('not in the list man');
+		}else{
+			alert('in the list man')
+		}
+
+		//choose random option from an array
+		var randomComputerOption = animals[Math.floor(Math.random() * animals.length)];
+
+	10 minutes we do
+		- make a list of 5 of your favorite bands/musicians and put it inside of an array and store that into a variable called myFavoriteMusicalArtists (make all your options lower case)
+
+		- ask the user for a band/artist, turn the user input lower case and then tell the user if you like the band too 
+
+Homework (you do):
+	Make an extreme rock paper scissors game that keeps running until the user wants to quit.
+		- initialize a variable at the top called userInput
+
+		- inside a while loop that uses the following condition: userInput doesn't equal to a string 'quit'
+			- prompt the user with this question: "Please choose one of these options: rock, paper, scissors. If you want to stop playing then please type in quit" and capture it into the userInput variable
+
+		- you can use switch statements or if/elseif/else conditional logic
+
+		- if the user types in quit and clicks ok then the game should stop
+
+		- keep score and everytime you prompt the user to "Please choose one of these..." then tell the user their score
+
+		- if the user quits, then display the user's score on the page using document.write
+
+		- add this code to your github as a new repository called hangman_fun
+			- if you have trouble with github, then make a gist instead (doesn't require any installation): https://gist.github.com/
+
+			- submit your homework here: 
+				use: "week 1 extreme rock paper scissors" for the "name of assignment" question
+
+				https://docs.google.com/forms/d/1D8mazyOoKKOn7Kq5DHJWo6nSDyTOo94jxoPKGxDu5Y8/viewform?usp=send_form
+
+	Bonus 1: count the user's ties
+		- count everytime the user ties and display that when your game prompts the user to "Please choose one of these..."
+		- also display the user's ties when the user quits
+
+	Bonus 2: put in validation, so if the user doesn't type in rock, paper scissors, string or macbook then your prompt with "Please choose one of these options: rock, paper, scissors..." comes up again
+
+	Bonus 3: When the user quits, make a nice sound play if the user has a score greater than 0, make a bad sound play if the user has a score of 0 or below. Use the first answer to this question: http://stackoverflow.com/questions/9419263/playing-audio-with-javascript
+
+		- you can use sounds from here: http://soundbible.com/
+		- you need to download them and keep them included in the same folder as your javascript file in order to use them
+
+	Bonus 4: add in string, and macbook to the options available
+		- string beats rock and paper but gets beaten by scissors and macbook
+
+		- macbook beats paper, string but gets beaten by rock and scissors
+
+		- alternatively you can use envelope, rubber band and tape + come up with your own rules
