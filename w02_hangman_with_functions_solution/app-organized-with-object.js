@@ -1,6 +1,6 @@
 var game = {
 
-	words : ["cat", "fat", "sat", "mat", "meow"],
+	words : ["cat", "bat", "sat", "mat", "meow"],
 	word : "",
 	lettersOfWord : [],
 	displayWord: "",

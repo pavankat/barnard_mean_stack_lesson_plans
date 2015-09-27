@@ -1,0 +1,9 @@
+constructor functions, scope, window/document, jQuery, first project given
+
+var F = function() {
+  this.name = "sean"
+}
+var f = new F();
+console.log("my name is " + f.name);
+
+// https://github.com/ga-students/peach/blob/master/w02/d01/exercises.md

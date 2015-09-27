@@ -1,0 +1,454 @@
+Objectives:
+	1. students will understand when and how to use functions
+	2. students will know how to use objects in JavaScript
+	3. students will understand the difference between arrays and objects and when to use which one
+	4. students will understand how to loop over arrays and the keys or values of an object
+	5. students will understand how to use debugger and break points to help with debugging their programs
+	6. students will have the skills necessary to make a hang man game in JavaScript 
+
+Do Now - while loop review
+	Write a javascript application that takes a string as an argument and logs every vowel in the string.
+	** Bonus: ** Build a new string with the vowels.
+
+	```
+	var word = prompt("give me a word - I'll count the vowels and make a new word with them");
+	var counter = 0;
+	var newWord = "";
+
+	while (counter < word.length) {
+	  var let = word[counter];
+
+	  if (let==="a" || let==="e" || let === "i" || let ==="o" || let === "u") {
+	    console.log(let);
+	    newWord = newWord + let;
+	  }
+
+	  counter++;
+	}
+
+	alert("The number of vowels of the word " + word + " is: " + counter + ". \n\n If we add the vowels together we get this word: " + newWord);
+	```
+
+10 minutes I do 
+	- go over functions
+
+	- you've already seen them - these are available as part of JavaScript - this has to do with the universe of JavaScript - kind of like 1,2,3,4 are in the Natural Number Universe, these functions live in JavaScript's universe the Window Object
+		- alert()/confirm()/prompt()
+		- push()/shift()/unshift()
+
+	  //one way
+	  function addTwo(a){
+	  	return a + 2;
+	  }
+
+	  //better 
+	  //arguments - named to use in only the context of INSIDE THE FUNCTION
+	  var addTwo = function(a){
+	   return a + 2;
+	  }
+
+	  //max number of args is 255
+	  var returnFirstLetter = function(string){
+	    return string[0];
+	  }
+	  
+	  - return value - function returns some value - you can talk about how you have to tell it what to return in JS. 
+
+	  - calling/invoking it: with 2 parens() 
+	  - referencing it: without ()
+	  	//why?? Because JS is functional, 
+	  		- you can pass functions as arguments to other functions 
+	  			- that's called a CALL BACK - we'll go over this later
+	  
+	## Why do we want functions?
+		- DRY
+		- separation of concerns
+		- looks nicer, is more readable
+		- reusable in other places!!!!!  BIGGEST POINT!!!! DRY - don't repeat yourself
+		- encapsulates functionality and does what it says
+
+15 minutes they do
+	- function exercises
+
+	//##2. Argumentative
+		//Write a function called adder that takes two integers as parameters and returns the sum of the integers to the console.
+
+	//##3. I'd like to buy a consonant
+		//With a partner, write a command line application that takes two strings as arguments and return the number of consonants in the strings. 
+
+		//Is your code DRY? If not, then try to make it dry
+
+	//##4. Is there a vowel in the array?
+		//Write a function called isThereAVowelInIt that takes in an array of letters and returns true or false based on whether there is a vowel inside the array
+
+		// use the function to print true/false to the console with this array: [f, g, h, r, i], this array: [t, y, b, a, c, v] and this one: [t, y]
+
+10 minutes I do 
+	- go over objects
+
+	picture an object as a big box with a bunch of names that point to values. // write down this
+
+	var pavan = {
+	  hairColor: 'black',
+	  eyeColor: 'black',
+	  pantType: 'jeans',
+	  favoriteFood: 'pizza',
+	  'favorite rabbit': 'sprite'
+	};
+
+	//two ways to access things
+	pavan.hairColor
+	pavan['hairColor']
+	pavan['favorite rabbit'] //works
+	pavan.favorite rabbit //doesn't work
+
+	pavan.hairColor = 'blue'; //one halloween 
+	pavan.hairColor; //now it says blue
+
+	- go over when to use objects and arrays - if it's a list, then you use an array, if it's specific details then you use an object. If you need to organize things then an object is great for that.
+
+
+10 minutes they do
+	//Exercise One
+		var bands = {
+		  'blink 182': "what's my age again",
+		  'backstreet boys': "everybody",
+		  'depeche mode': ['people are people', 'lilian', 'suffer well', 'strange love']
+		}
+
+		bands['depeche mode'] //returns an array
+
+		//loop over bands['depeche mode'] and console.log all the values
+
+	// Exercise Two
+		//objects can have objects in them
+
+		  var house = {
+		    kitchen: {
+		      color: "white",
+		      fridge: true,
+		      dishwasher: false
+		    }
+		  }
+
+		  //how do I return the value of fridge
+		  //how do I return the value of dishwasher
+
+	// Exercise Three
+		var bankAccount = {
+		  number: 555555,
+		  balance: {
+		    checking: 6.30,
+		    savings: 10.09,
+		    investments: {
+		      cocaCola:  100.00,
+		      tesla: 200.00,
+		    }
+		  }
+		}
+
+		//fill in the variables with object calls and console.log them out after
+
+		var checkingBalance = ...;
+		var savingsBalance = ...;
+		var teslaBalance = ...;
+
+		console.log(checkingBalance);
+		console.log(savingsBalance);
+		console.log(teslaBalance);
+
+5 minutes I do
+	- objects with functions and calling them outside the object
+
+	var pokemon = {
+	  level: 4,
+	  name: 'Charmander',
+	  type: 'fire',
+	  moves: ['ember', 'scratch', 'growl'],
+	  hp: 100,
+
+	  takeDamage: function(amount){
+	    this.hp -= amount;
+	    if (this.hp <= 0) {
+	      this.hp = 0;
+	      return 'Your pokemon fainted'
+	    }
+	    return 'Hang in there' + this.name + '!';
+	  },
+
+	  visitPokeCenter: function() {
+	    this.hp = 100;
+	  },
+
+	  isFainted: function() {
+	    if (this.hp <= 0) {
+	        return [true, "No, take " + this.name + " to the PokeCenter now!"];
+	    } else {
+	        return [false, "He's all good."];
+	    }
+	  },
+
+	  randomMove: function() {
+	    var randomIndex = Math.floor(Math.random() * this.moves.length);
+	    return this.moves[randomIndex];
+	  },
+
+	  attack: function() {
+	    return this.name + " used " + this.randomMove();
+	  }
+
+	};
+
+	//do this
+
+	charmander.name;
+
+	charmander.hp;
+	charmander.takeDamage(10);
+	charmander.hp;
+
+	charmander.moves;
+	charmander.randomMove; //what happened?
+	charmander.randomMove();
+	charmander.attack();
+
+	//go over using this
+
+10 minutes They Do
+	- exercise regarding objects with functions
+		
+	```
+	//exercise one
+	//finish the totalCash function, and after you're done invoke it via the object
+
+	var cashRegister = {
+	  singles:    30,
+	  fivers:     8,
+	  tens:       3,
+	  twenties:   2,
+
+	  totalCash:  function () {
+		//return the total cash in the cashRegister
+
+	  }
+	};
+	```
+
+	```
+	//exercise two 
+	//finish the tick function, 
+	//and after you're done invoke it via the object until the boom function get's invoked.
+
+	var timeBomb = {
+	  secondsLeft: 5,
+	  tick: function () {
+	    // TODO:
+	    //	Decrement the timer
+	    //	and when it hits zero
+	    //	have it explode via the boom property of the timeBomb object
+	    //	and reset the secondsLeft property
+	  },
+	  boom: function () {
+	    alert("KaBOoOoM!");
+	  }
+	};
+	```
+
+	//solution for exercise one:
+
+		//part one
+			return 1 * this.singles +
+			       5 * this.fivers  +
+			      10 * this.tens    +
+			      20 * this.twenties;
+
+		//part two
+			cashRegister.totalCash();
+
+	//solution for exercise two:
+
+		//part one
+			if (this.secondsLeft > 0){
+				this.secondsLeft--;
+                //console.log(this.secondsLeft); //just to check
+                
+                if (this.secondsLeft == 0){
+                	this.secondsLeft = 5;
+                    this.boom();
+                }
+			}
+
+		//part two
+			timeBomb.tick();
+			timeBomb.tick();
+			timeBomb.tick();
+			timeBomb.tick();
+			timeBomb.tick();
+
+// I do (10 minutes)
+
+	var arr = ['hi', 'yo', 'bye', 'later'];
+
+	for(var i = 0; i < arr.length; i++){
+		console.log(arr[i]);
+	}
+
+	var pavan = {
+	  hairColor: 'black',
+	  eyeColor: 'black',
+	  pantType: 'jeans',
+	  favoriteFood: 'pizza',
+	  'favorite rabbit': 'sprite'
+	};
+
+	for(var i = 0; i < Object.keys(pavan).length; i++){
+		console.log(Object.keys(pavan)[i]);
+	}
+
+	// or clean it up with 
+	var pavnaArr = Object.keys(pavan); and loop over that 
+	
+	// loop over the values in an object
+	for (var key in pavan) {
+	    console.log(pavan[key]);
+	}
+
+
+// They do (15 minutes)
+	Exercises: for loops
+
+	// 1. The even/odd reporter
+
+	/* Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even"). */
+
+	//2. Multiplication Tables
+
+	/* Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
+
+	Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total). */
+
+	//1 solution
+		for (var i = 0; i <= 20; i++) {
+		    if (i % 2 === 0) {
+		        console.log(i + ' is even');
+		    } else {
+		        console.log(i + ' is odd');
+		    }
+		}
+
+	//2 solution
+		// Multiplication tables
+		var multiplier = 9;
+		for (var i = 0; i <= 10; i++) {
+		    var result = multiplier * i;
+		    console.log(multiplier + ' * ' + i + ' = ' + result);
+		}
+
+
+		for (var multiplier = 0; multiplier <= 10; multiplier++) {
+		 for (var i = 0; i <= 10; i++) {
+		   var result = multiplier * i;
+		   console.log(multiplier + ' * ' + i + ' = ' + result);
+		 }
+		}		
+
+
+// I do (10 minutes)
+	
+	- throw debugger; 
+
+	- hit the play button
+
+	- hit escape to get the console to come up and test what things are at that line at that moment
+
+	- use break points in the sources tab of the console
+
+	- turn off break points
+
+	- need to have console open to invoke break points
+
+// They do (10 minutes)
+
+	// 1. put in a debugger; statement before the alert inside the while loop. Run the program in your browser with your console open. What happened?
+	// 2. manually put in a break point where the counter is incremented. Run your program. What happened?
+
+	var counter = 0;
+
+	while (counter < 5){
+		alert
+		counter++;
+	}
+
+----HOMEWORK: Hangman via Prompts----
+
+Objectives:
+- ask the user to guess a random word from an array
+- the user has a limited amount of guesses (word length + 4)
+- the user can see the word as it gets built and can see the number of guesses left
+- Use functions to keep your code DRY (don't repeat yourself)
+
+* These instructions are meant to guide you. Your end goal is to make the game look like this: https://youtu.be/ViVTNTKblV0 *
+
+- Use a variable called words to store an array that has words that a user may have to guess
+- Use a variable called word that contains the word that the game will use
+- Use a variable called displayWord that contains the word that gets displayed to the user on each prompt (if the word was blue, then the user might see __ue)
+- Use a variable called chancesUsed to store the number of tries a user has left
+- Use a variable called totalChances to store the total chances a user has
+- Use a variable called correct that stores the number of correct answers the user got
+- Use a variable called lettersOfWord to store an array of letters that the word has
+
+- Make a function called setRandomWord
+	- that will choose a random word out of that array of words 
+	- use this random word for the game
+	
+- Make a function called initialSetupForDisplayWord that takes one argument (will be a word)
+	- if the word is apple, it will return this string: "_____"
+	- basically it will replace every letter in the word with _
+
+- Use a prompt to ask the user to guess a letter (this will be encapsulated into a function called promptUser)
+	- you will use the initialSetupForDisplayWord to do this, and the 
+
+	The prompt will end up looking like this:
+		"So far you have: ___. Guess a letter please. Type 'quit' to quit playing. You have 7 chances left!"
+
+- Put in validation to make sure the user's input is a letter and not a word (anything over 1 letter is a word in our case)
+promptUser(c, w)
+
+- If the letter the user guesses is in the word then 
+	- the next prompt should look like this "So far you have: _a_. Guess a letter please. Type 'quit' to quit playing. You have 7 chances left!"
+		- the 7 would be totalChances - chancesUsed 
+
+	- add one to the correct variable
+	- call a function called rebuildDisplayWord which takes in three arguments: index, wrd, dispwrd
+		- index would be the index of the user's guess in the lettersOfWord
+		- wrd would be the word variable
+		- dispwrd would be the displayWord variable
+
+		- the function would return what displayword should now look like
+
+		- you would replace the old value of displayWord with this new value
+
+	- remove that letter that was guessed from the lettersOfWord array
+
+	- call the promptUser function, while  displayWord != word
+
+- If the letter is not in the word then
+	- add one to the chancesUsed, and call the promptUser function again.
+
+- If chancesUsed == totalChances
+	then tell the user that they lost
+
+- Let the user quit by typing in 'quit'
+
+- add this code to your github as a new repository called hangman_fun
+	- if you have trouble with github, then make a gist instead (doesn't require any installation): https://gist.github.com/
+
+	- submit your homework here: 
+		use: "week 2 hang man" for the "name of assignment" question
+
+		https://docs.google.com/forms/d/1D8mazyOoKKOn7Kq5DHJWo6nSDyTOo94jxoPKGxDu5Y8/viewform?usp=send_form
+
+//Bonus
+- Let the user replay the game 
+	- you can use location.reload(); to refresh the page
+- Organize your code to be inside of an object which gets stored inside a variable called game. Have a play property that points to a function that executes the game. Invoke your game on page load by doing game.play(); after your object code.

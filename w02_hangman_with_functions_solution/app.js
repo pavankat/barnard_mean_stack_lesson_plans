@@ -33,7 +33,7 @@ function rebuildDisplayWord (index, wrd, dispwrd){
   return dispwrd;
 }
 
-var words = ["cat", "fat", "sat", "mat", "meow"];
+var words = ["cat", "bat", "sat", "mat", "meow"];
 var word, 
   displayWord, 
   continuePlay = true,
