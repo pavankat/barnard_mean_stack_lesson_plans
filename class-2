@@ -6,7 +6,7 @@ Objectives:
 	5. students will understand how to use debugger and break points to help with debugging their programs
 	6. students will have the skills necessary to make a hang man game in JavaScript 
 
-Do Now - while loop review
+Do Now - while loop review (10 minutes)
 	Write a javascript application that takes a string as an argument and logs every vowel in the string.
 	** Bonus: ** Build a new string with the vowels.
 
