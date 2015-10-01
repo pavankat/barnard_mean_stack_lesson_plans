@@ -433,6 +433,9 @@ class 1 - Intro, Sublime Text Usage, Terminal, JavaScript (variables, datatypes,
 
 			// slice will give us a copy of the array -> safer.
 
+	3 minutes I do
+		break out of while loop with ```break;```
+
 Homework (you do):
 	Make an extreme rock paper scissors game that keeps running until the user wants to quit. It will look like this when done: https://youtu.be/z6YjKudahCE
 

@@ -13,6 +13,7 @@ Do Now - while loop review (10 minutes)
 	```
 	var word = prompt("give me a word - I'll count the vowels and make a new word with them");
 	var counter = 0;
+	var vowelCounter = 0;
 	var newWord = "";
 
 	while (counter < word.length) {
@@ -21,9 +22,10 @@ Do Now - while loop review (10 minutes)
 	  if (let==="a" || let==="e" || let === "i" || let ==="o" || let === "u") {
 	    console.log(let);
 	    newWord = newWord + let;
+	    vowelCounter++; //equivalent to vowelCounter = vowelCounter + 1;
 	  }
 
-	  counter++;
+	  counter++; //equivalent to counter = counter + 1;
 	}
 
 	alert("The number of vowels of the word " + word + " is: " + counter + ". \n\n If we add the vowels together we get this word: " + newWord);
