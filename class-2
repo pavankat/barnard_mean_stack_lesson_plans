@@ -6,6 +6,14 @@ Objectives:
 	5. students will understand how to use debugger and break points to help with debugging their programs
 	6. students will have the skills necessary to make a hang man game in JavaScript 
 
+
+
+
+
+
+
+
+
 Do Now - while loop review (10 minutes)
 	Write a javascript application that takes a string as an argument and logs every vowel in the string.
 	** Bonus: ** Build a new string with the vowels.
@@ -72,15 +80,15 @@ Do Now - while loop review (10 minutes)
 15 minutes they do
 	- function exercises
 
-	//##2. Argumentative
+	//##1. Argumentative
 		//Write a function called adder that takes two integers as parameters and returns the sum of the integers to the console.
 
-	//##3. I'd like to buy a consonant
+	//##2. I'd like to buy a consonant
 		//With a partner, write a command line application that takes two strings as arguments and return the number of consonants in the strings. 
 
 		//Is your code DRY? If not, then try to make it dry
 
-	//##4. Is there a vowel in the array?
+	//##3. Is there a vowel in the array?
 		//Write a function called isThereAVowelInIt that takes in an array of letters and returns true or false based on whether there is a vowel inside the array
 
 		// use the function to print true/false to the console with this array: [f, g, h, r, i], this array: [t, y, b, a, c, v] and this one: [t, y]

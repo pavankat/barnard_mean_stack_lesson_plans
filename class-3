@@ -7,3 +7,24 @@ var f = new F();
 console.log("my name is " + f.name);
 
 // https://github.com/ga-students/peach/blob/master/w02/d01/exercises.md
+
+scope goes up 
+	- get ga stuff
+	
+window/document
+	- get ga stuff
+
+jQuery
+	- get ga stuff
+	- give a guide of the commands for javascript and what they are in jQuery for student reference
+	- why use it -> mobile browser differences - they've accounted for - if you use the cdn - most people have it cached already - so your page will be faster
+	- people who do DOM things in straight jav
+
+	- on cick is important, on key press important
+
+First project given
+	- give them tic tac toe screencasts
+	- give them options on games to make
+		- use jQuery, JavaScript, 
+
+		- pseduo code in class and submit to me before class ends

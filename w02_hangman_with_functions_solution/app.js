@@ -22,14 +22,14 @@ function setRandomWord(){
 
 function rebuildDisplayWord (index, wrd, dispwrd){
 
-  var letter = wrd[i];
+  var letter = wrd[index];
 
   //how we replace a particular part of a string with a letter in javascript
   //we do this because in javascript strings are immutable
   dispwrd = dispwrd.split('');
   dispwrd[index] = letter;
   dispwrd = dispwrd.join('');
-
+  debugger;
   return dispwrd;
 }
 
@@ -81,7 +81,8 @@ while( displayWord != word ){
     lettersOfWord.splice(i, 1);
 
     //for a correct guess, set the display word to include this new letter
-    displayWord = rebuildDisplayWord (i, word, displayWord);
+    debugger;
+    displayWord = rebuildDisplayWord (word.indexOf(guess), word, displayWord); //we can't use i here because we need to replace the correct number in displayWord and i won't be that number because lettersOfWord constantly gets letters taken out.
     correct++;
   }else{
     chancesUsed++;

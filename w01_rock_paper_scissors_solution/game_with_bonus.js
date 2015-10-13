@@ -164,7 +164,7 @@ while (userInput != 'quit'){
 
 }
 
-document.write('Your score for extreme rock papers scissors is ' + score + '. Your tied ' + ties + ' times.');
+document.write('Your score for extreme rock papers scissors is ' + score + '. You tied ' + ties + ' times.');
 
 if (score > 0){
 	win_sound.play();
