@@ -1,4 +1,13 @@
-constructor functions, scope, window/document, jQuery, first project given
+//Objectives:
+// 1. students will understand how to use constructor functions to create objects.
+// 2. students will understand be able to identify what a variable equals to based on JavaScript Scope.
+// 3. students will understand how the window and document works in js
+// 4. students will be able to use jQuery to make their webpages interactive
+// 5. students will be ready to do their first project for this class - a game 
+
+//window/document, jQuery, first project given
+
+//I DO - 5 minutes
 
 var F = function() {
   this.name = "sean"
@@ -6,13 +15,487 @@ var F = function() {
 var f = new F();
 console.log("my name is " + f.name);
 
-// https://github.com/ga-students/peach/blob/master/w02/d01/exercises.md
+var Dessert = function(nme, ingrdnts, rating) {
+	this.name = nme;
+	this.ingredients = ingrdnts;
+	this.ratingOutOfTen = rating;
+	this.chancePavanWillEat = function(){
+		return this.ratingOutOfTen * 5;
+	}
+}
 
-scope goes up 
-	- get ga stuff
+var puddingCake = new Dessert('chocolate pudding cake', ['chocolate', 'pudding', 'cake'], 7);
+var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'pudding', 'cake'], 6);
+
+//YOU DO- 15 minutes
+	/*
+		For those who don't remember (or choose to forget), Tamagotchis were "digital pets" that you could carry around with you and feed them, clean up after them, pet them, and try to keep them happy.
+
+		Make a Tamagotchi constructor. Give it the following properties:
+		1. a hungry property (initially false)
+		2. a sick property (initially false)
+		3. an age of 0
+
+		and give it the following methods:
+
+		feed() - if hungry is true, print "That was yummy!" and set hungry to false. If hungry is false, print "No thanks, I'm full." and set hungry to true.
+		sleep() - prints out "zzzzzzz" (use as many z's as you want)
+		medicate() - if sick is true, print "I feel much better!" and set sick to false. If sick is false, print "No thanks, I feel fine." and set sick to true.
+		increaseAge() - increase the age by one and print "Happy Birthday to me! I am " + age + " years old!"
+		Now make a variable named dog that is set to a new Tamagotchi.
+
+		Add the following methods to it:
+		1. bark() - prints out "ruff ruff
+		2. goOutside() - prints out "I own that tree now!"
+
+		Make a variable named cat that is set to a new Tamagotchi. Add the following methods to it:
+		1. meow() - prints out "Meow!"
+		2. useLitterBox() - "Burried treasure!"
+	*/
+
+	/*
+		//solution
+
+		var Tamagotchi = function() {
+		  this.hungry = false;
+		  this.sick = false;
+		  this.age = 0;
+
+		  this.feed = function() {
+		    if(this.hungry === true) {
+		      console.log("That was yummy!");
+		      this.hungry = false;
+		    }
+		    else {
+		      console.log("No thanks, I'm full.");
+		      this.hungry = true;
+		    }
+		  };
+
+		  this.sleep = function() {
+		    console.log("zzzzzzzzzzzz");
+		  };
+
+		  this.medicate = function() {
+		    if(this.sick === true) {
+		      console.log("I feel much better");
+		      this.sick = false;
+		    }
+		    else {
+		      console.log("No thanks, I feel fine.");
+		      this.sick = true;
+		    }
+		  };
+
+		  this.increaseAge = function() {
+		    this.age ++;
+		    console.log("Happy Birthday to me! I am " + this.age +
+		    " years old!");
+		  };
+		};
+
+		var dog = new Tamagotchi();
+		dog.bark = function() {
+		  console.log("ruff ruff!");
+		}
+
+		dog.goOutside = function() {
+		  console.log("I own that tree now!");
+		}
+
+		var cat = new Tamagotchi();
+		cat.meow = function() {
+		  console.log("Meow!");
+		}
+		cat.useLitterBox = function() {
+		  console.log("Burried treasure!");
+		}
+	*/
+
+
+
+//SCOPE "it always goes up in JS" -> lexical scope
+
+//I DO - 3 minutes 
+
+	var hamsterName = 'chuck';
+
+	var doSomething = function(){
+
+		alert(hamsterName);
+
+	}
+
+	doSomething();
+
+	//me: when the doSomething function executes - JS looks for the hamsterName variable inside the function - if it doesn't find it then it looks one level above it. It finds it right above it
+
+	//me: *** comment out var hamsterName = 'chuck'; ***
+
+	//engage everyone: think in your head what happens when this executes
+
+	//me: the code fails but what happened? the doSomething function executes, JS looks for hamsterName inside the doSomething function, it doesn't find it, so it goes up one level and it doesn't find it and it throws an error that we're using an undefined variable
+
+
+//I DO - 3 minutes
+	var goodSong = "Digging Deep by Jakalope"
+
+	function whatsThatSong() {
+	    var anotherGoodSong = "Hurricane by Halsey";
+
+	    // code here can use anotherGoodSong because song only exists inside this function
+	    console.log(anotherGoodSong)
+	}
+
+	alert(goodSong); // code here can use goodSong because it's globally available
+
+	//Global means the variable was declared outside of any functions. Global variables can be used anywhere in your code.
+
+	alert(anotherGoodSong);  // code here can not use anotherGoodSong, because anotherGoodSong is only available inside the whatsThatsong function - in other words anotherGoodSong is locally scoped inside the whatsThatSong function
+
+	whatsThatSong();
+
+	alert(anotherGoodSong);  // code here can not use anotherGoodSong - even after you execute the whatsThatSong() function.
+
+	//engage one student: what does executing a function mean in JS? 
+
+//YOU DO - 2 minutes
+
+	//work by yourself - slack me the answer - direct message me not the group
+
+	//What happens when this program gets executed
+	var word = "this is global";
+
+	function go() { 
+	  var anotherWord = "this is local";
+	}
+
+	go();
+
+	alert(anotherWord);
+
+//I DO - 3 minutes
+	var word = "this is global";
+
+	function go() { 
+	  anotherWord = "this is global too";
+	}
+
+	go();
+
+	alert(anotherWord); 
+
+	//engage everyone: explain to your partner why "this is global too" alerts to the screen
+
+	//me: when you don't include var in front of a variable - it forces it to be global - no matter where you put it. It's a best practice to always put var in front of your variables to avoid this. However, in some cases you want a function to over ride a global variable's value. It's important to try your best to avoid this.
+
+	//engage everyone: what if I take out go(); Will this work? No because that line of code needs to execute for the variable to be made globally available.
+
+//You do - 1 minute - explain to your partner what the difference is between these two variables 
+	var wearingSunglasses = true; 
+	wearingDesignerShoes = false; 
+
+	//answer : nothing - they're both global because they're outside a function - the first one is more proper - but they both essentially are the same because they're ___________ (let them finish this: outside a function).
+
+// I do - 3 minutes 
+	var hi = function(){
+		hi = 'stuff';
+		alert('boom');
+	}
+
+	hi();
+
+	hi; 
+
+	hi(); //it's gone
+
+	// we solve this by scoping the variable hi to the hi function
+	// variables declared 
+		//what do I mean by declared?
+		//if a variable is not declared then js goes up to look for it
+
+	  var hi = function(){
+	    var hi = 'stuff';
+	    alert('boom');
+	  }
+
+	  hi();
+
+	  hi; 
+
+	  hi(); //it's BACK
+
+	//ENGAGEMENT TIME (think for a moment what will happen - now in a minute discuss this with your partner)
+	var anotherWord = "this is global";
+
+	function go() { 
+	  var anotherWord = "this is local";
+	  alert(anotherWord)
+	}
+
+	go();
+
+	      
+// I do - 5 minutes
+	//don't copy and paste this - live code it
+	    //show how scope1 works and call it
+	      //then put in scope2 and call it ...
+	var name = "Steven Patrick Morrissey";
+
+	var scope1 = function () {
+		
+		console.log(name);
+		
+		var scope2 = function () {
+	  	
+	  		console.log(name);
+	  	
+	  		var scope3 = function () {
+	    		console.log(name);
+	    		var anotherName = 'Jakob Dylan'; // locally scoped
+	  		};
+	  	
+	  		scope3();
+		};
+		
+		scope2();
+	};
+
+	scope1();
+
+	alert(anotherName); //won't work
+
+
+
+
+//WINDOW/DOCUMENT
+
+//I do - 10 minutes
+
+	/*
+		the window object
+
+		what you see in the browser is the window
+
+		and all your javascript goes right into it
+
+		including all your variables
+
+			when you do alert('hi')
+
+			you're actually doing window.alert('hi');
+	*/
+
+//You do - 1 minute
+	/*
+		think in your head now - don't answer - what is the window based on the dot structure above?
+
+			- it's an object
+	*/
+
+//You do - 1 minute
+	/*
+		answer in your head - not outloud - what's alert in respect to the window?
+			- it's a key of the window object and that key points to a function
+			- what does it do?
+				- it alerts to the screen
+	*/
+
+//I do - 5 minutes
+	//when you do 
+		var catName = 'whiskers'
+
+		function giveMeABand(){
+			console.log('hi')
+		}
+
+		window.giveMeABand();
+
+	//The window has properties like
+		// - innerWidth
+		// - innerHeight
+			// - if console is open it affects the height 
+
+		// but here's something crazy 
+			//where are we right now - we are in a universe 
+
+//You do - 1 minute
+	// * type this *
+
+	//AS FRONT END JS developers - your javascript lives in what universe? _____ - talk about it with your partners - right it down
+		
+		// Answer: the window is your universe
+
+
+// I do - 10 minutes
 	
-window/document
-	- get ga stuff
+	// The document is in the window
+
+	// - what is the document - it's all your html
+		// 	- converted into a javascript object
+		
+// One Does - Cold Call
+
+	window.document
+
+	//is this the same as
+
+	document
+
+	//it is because, when you say document, js just attaches it to the window. Why? 
+
+// I do - 10 minutes
+
+	document.title // get's the document's title
+
+	document.body // get's the document's body
+
+
+	//DOM = document object model
+		//Document
+			//Element -> html
+				//-> Element -> head
+					//-> Element -> title
+						//-> Text sample page
+				//-> Element -> body
+					//-> Element -> p
+						//-> Text -> Hello World!
+
+
+		Grabbing elements
+			var myId = document.getElementById("myId")
+			var elementsByTwoClassNames = document.getElementByClassName("lizards bats") //grabs elements with class of lizards AND class of bats
+
+			var images = document.getElementsByTagName("img")
+				images.length
+			document.links (all links with a href attribute)
+			document.anchors (all a's with a name attribute)
+			document.forms //we'll get into this at another time
+
+		Grabbing by name
+			you can do something cool if your images have name attributes
+				<img src="thing.gif" alt="thingie" name="thingieName">
+
+					then you can do images.namedItem("thingieName")
+
+		Grabbing all by name
+			var thingsByName = document.getEementsByName("color")
+
+
+		Getting things by class, by tag name and class, by tag name and inner tag name
+			get the first element with a class of 
+				document.querySelector(".thingie")
+
+			get the first element with a class of cats
+				document.querySelector(".cats")
+
+			get the first image with a class of cats
+				document.querySelector("img.cats")
+
+			get all the elements with a class name of
+				document.querySelectorAll(".dogs")
+
+			get all the elements that are p tags that have strong inside of them
+				document.querySelectorAll("p strong")
+
+		In class exercise:
+			select all the p tags in a strong
+
+				<p>
+					<strong class='bands'>Backstreet Boys</strong>
+				</p>
+				<p>
+					<strong>cat</strong>
+				</p>
+				<p>
+					<strong class='bands'>N'Sync</strong>
+				</p>
+				<p>
+					<strong class='bands'>Five</strong>
+				</p>
+
+		http://www.w3schools.com/js/pic_navigate.gif
+
+		CHILDREN
+			<ul id="animalList">
+				<li>hi</li>
+				<li>thing</li>
+				<li>thingie</li>
+			</ul>
+				
+			var list = document.getElementById("animalList")
+
+			list.children
+				//what can I do with this now?
+				//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
+
+
+
+		BY REFERENCE
+			oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference- that’s why you can change its properties and they change on screen
+
+
+
+		Getting and setting attributes of elements
+			div = document.getElementById("contentContainer")
+			div.getAttribute("id") //or class or title
+
+			div.setAttribute("id", "stuff")
+
+			div.name = 'instruction_div_name' //alternative way of setting attribute
+
+			div.id = 'instructions' //alternative way of setting attribute
+
+			div.class = 'hi' //doesn't work
+
+			removing and adding classes
+				div.classList.remove("disabled")
+				div.classList.add("things")
+
+
+		edit inner html and inner text
+
+			var pTag = document.getElementById("bands")
+
+			pTag.class = 'indieRock';
+
+			pTag.innerHTML = '<strong>give me an indie rock band</strong>';
+
+			//try it again 
+				pTag.innerText = '<strong>give me an indie rock band</strong>';
+
+		Creating elements
+			var newElement = document.createElement('div');
+		
+			document.body.appendChild(newElement)
+
+		Adding elements to the dom
+			One Way
+				var newElement = '<p id="foo">This is some dynamically added HTML. Yay!</p>';
+
+				var div = document.createElement('div')
+
+			Another way
+				add stuff to the dom using innerHTML
+					- want to try to avoid putting html here - because being DRY is keeping your code organized and modular - keeping it in certain places
+
+					var newElement = '<p id="foo">This is some dynamically added HTML. Yay!</p>';
+					var bodyElement = document.body;
+					bodyElement.innerHTML = newElement + bodyElement.innerHTML;
+
+		Editing elements from the dom
+			- grab it from the dom
+			- edit the innerHTML
+
+		Deleting elements from the dom
+			<div id="rockBand">
+			  <p id="blink">Blink 182</p>
+			</div>
+
+			var element = document.getElementById("blink");
+
+  			element.parentNode.removeChild(element);
+
 
 jQuery
 	- get ga stuff
@@ -22,9 +505,13 @@ jQuery
 
 	- on cick is important, on key press important
 
-First project given
+//Homework: First project given
 	- give them tic tac toe screencasts
-	- give them options on games to make
-		- use jQuery, JavaScript, 
 
-		- pseduo code in class and submit to me before class ends
+	- make an rpg game with html, css, JavaScript and jQuery
+		- one player
+		- story line
+		- starts off with 100 health, a sword, 100 dollars. The player can fight
+	- another type of board game
+
+	- pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
