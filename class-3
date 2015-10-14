@@ -362,139 +362,63 @@ var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'puddin
 						//-> Text -> Hello World!
 
 
-		Grabbing elements
-			var myId = document.getElementById("myId")
-			var elementsByTwoClassNames = document.getElementByClassName("lizards bats") //grabs elements with class of lizards AND class of bats
-
-			var images = document.getElementsByTagName("img")
-				images.length
-			document.links (all links with a href attribute)
-			document.anchors (all a's with a name attribute)
-			document.forms //we'll get into this at another time
-
-		Grabbing by name
-			you can do something cool if your images have name attributes
-				<img src="thing.gif" alt="thingie" name="thingieName">
-
-					then you can do images.namedItem("thingieName")
-
-		Grabbing all by name
-			var thingsByName = document.getEementsByName("color")
+	//Grabbing elements
 
 
-		Getting things by class, by tag name and class, by tag name and inner tag name
-			get the first element with a class of 
-				document.querySelector(".thingie")
+	//Grabbing by name
 
-			get the first element with a class of cats
-				document.querySelector(".cats")
 
-			get the first image with a class of cats
-				document.querySelector("img.cats")
+	//Grabbing all by name
 
-			get all the elements with a class name of
-				document.querySelectorAll(".dogs")
+	//Getting things by class, by tag name and class, by tag name and inner tag name
 
-			get all the elements that are p tags that have strong inside of them
-				document.querySelectorAll("p strong")
+	//In class exercise:
+		//select all the p tags in a strong
 
-		In class exercise:
-			select all the p tags in a strong
+		<p>
+			<strong class='bands'>Backstreet Boys</strong>
+		</p>
+		<p>
+			<strong>cat</strong>
+		</p>
+		<p>
+			<strong class='bands'>N'Sync</strong>
+		</p>
+		<p>
+			<strong class='bands'>Five</strong>
+		</p>
 
-				<p>
-					<strong class='bands'>Backstreet Boys</strong>
-				</p>
-				<p>
-					<strong>cat</strong>
-				</p>
-				<p>
-					<strong class='bands'>N'Sync</strong>
-				</p>
-				<p>
-					<strong class='bands'>Five</strong>
-				</p>
+	//CHILDREN
+		<ul id="animalList">
+			<li>hi</li>
+			<li>thing</li>
+			<li>thingie</li>
+		</ul>
+			
+		var list = document.getElementById("animalList")
 
-		http://www.w3schools.com/js/pic_navigate.gif
-
-		CHILDREN
-			<ul id="animalList">
-				<li>hi</li>
-				<li>thing</li>
-				<li>thingie</li>
-			</ul>
-				
-			var list = document.getElementById("animalList")
-
-			list.children
-				//what can I do with this now?
-				//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
+		list.children
+			//what can I do with this now?
+			//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
 
 
 
-		BY REFERENCE
-			oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference- that’s why you can change its properties and they change on screen
+	//BY REFERENCE
+		//oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference - that’s why you can change its properties and they change on screen
+
+	//Getting and setting attributes of elements
+
+	//Creating elements
 
 
+	//Adding elements to the dom
+			
 
-		Getting and setting attributes of elements
-			div = document.getElementById("contentContainer")
-			div.getAttribute("id") //or class or title
+	//Editing elements from the dom
+		//- grab it from the dom
+		//- edit the innerHTML
 
-			div.setAttribute("id", "stuff")
-
-			div.name = 'instruction_div_name' //alternative way of setting attribute
-
-			div.id = 'instructions' //alternative way of setting attribute
-
-			div.class = 'hi' //doesn't work
-
-			removing and adding classes
-				div.classList.remove("disabled")
-				div.classList.add("things")
-
-
-		edit inner html and inner text
-
-			var pTag = document.getElementById("bands")
-
-			pTag.class = 'indieRock';
-
-			pTag.innerHTML = '<strong>give me an indie rock band</strong>';
-
-			//try it again 
-				pTag.innerText = '<strong>give me an indie rock band</strong>';
-
-		Creating elements
-			var newElement = document.createElement('div');
-		
-			document.body.appendChild(newElement)
-
-		Adding elements to the dom
-			One Way
-				var newElement = '<p id="foo">This is some dynamically added HTML. Yay!</p>';
-
-				var div = document.createElement('div')
-
-			Another way
-				add stuff to the dom using innerHTML
-					- want to try to avoid putting html here - because being DRY is keeping your code organized and modular - keeping it in certain places
-
-					var newElement = '<p id="foo">This is some dynamically added HTML. Yay!</p>';
-					var bodyElement = document.body;
-					bodyElement.innerHTML = newElement + bodyElement.innerHTML;
-
-		Editing elements from the dom
-			- grab it from the dom
-			- edit the innerHTML
-
-		Deleting elements from the dom
-			<div id="rockBand">
-			  <p id="blink">Blink 182</p>
-			</div>
-
-			var element = document.getElementById("blink");
-
-  			element.parentNode.removeChild(element);
+	//Deleting elements from the dom
 
 
 jQuery
@@ -506,12 +430,59 @@ jQuery
 	- on cick is important, on key press important
 
 //Homework: First project given
-	- give them tic tac toe screencasts
+	// - give them tic tac toe screencasts
 
-	- make an rpg game with html, css, JavaScript and jQuery
-		- one player
-		- story line
-		- starts off with 100 health, a sword, 100 dollars. The player can fight
-	- another type of board game
+		// All screencasts are 5 minutes long max. The first two are optional, but I urge everyone to watch them.
 
-	- pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
+		// - OPTIONAL (TOTAL: 15 minutes):
+		// 	- part 1: html of tic tac toe: DONE!
+		// 		http://screencast.com/t/gVO69LzuDW1T
+		// 	- part 2: using box model and floating for tic tac toe:
+		// 		http://screencast.com/t/LS9vNbyWTZ		DONE!
+		// 	- part 3 styling the tic tac toe board:
+		// 		http://screencast.com/t/9npBPXtDzSC		DONE!
+
+		// - GOOD TO GO OVER - BUT NOT NECESSARY:
+		// 	GOING OVER PREVIOUS CONCEPTS
+		// 		- part 4 finding a bug and fixing it with debugger - part 1
+		// 			http://screencast.com/t/u2aR233Bbonh
+		// 		- part 5 finding a bug and fixing it with debugger - part 2
+		// 			http://screencast.com/t/IaXFyfgx0o
+		// 		- part 6 fixing a bad practice AND going over event handlers AND going over callbacks 
+		// 			http://screencast.com/t/9SZmwloI
+		// 		- part 7 going over loading the javascript
+		// 			http://screencast.com/t/DD7BsbFsyYH
+		// 			Read this:
+		// 				http://stackoverflow.com/questions/588040/window-onload-vs-document-onload
+
+		// - NECESSARY:
+		// 	GOING OVER NEW CONCEPTS (20 minutes)
+		// 	- tic tac toe winning formula part 1
+		// 		http://screencast.com/t/TBpojJBTng
+
+		// 	- tic tac toe winning formula part 2 
+		// 		http://screencast.com/t/oCLksTSRhh
+
+		// 	- tic tac toe winning formula part 3
+		// 		http://screencast.com/t/l6kS9kZP6p
+
+		// 	- tic tac toe winning formula part 4
+		// 		http://screencast.com/t/fWogR8x9BLI3
+		// 		- answer why did it do that
+
+		// 	-  tic tac toe winning formula part 5
+		// 		http://screencast.com/t/jcSoHmJvc0
+		// 			- I forgot to put the bottom code block into the nested for loop
+		// 			- what happens if it stays the way it does?
+		// 			- why do we need it in the nested for loop?
+		// 				if ((comboCountX == 3) || (comboCountO == 3)){
+		// 					alert('you won')
+		// 				}
+
+	// - make an rpg game with html, css, JavaScript and jQuery
+	// 	- one player
+	// 	- story line
+	// 	- starts off with 100 health, a sword, 100 dollars. The player can fight
+	// - another type of board game
+
+	// - pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
