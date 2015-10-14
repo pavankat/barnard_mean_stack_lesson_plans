@@ -361,6 +361,53 @@ var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'puddin
 					//-> Element -> p
 						//-> Text -> Hello World!
 
+// jQUERY 
+	// WHY?
+		// * Explain the purpose of jQuery as making our code easier to write and cross-browser compatible
+		// * Describe a library as a set of utilities/code that you can use for free!
+		// * Distinguish between native DOM element objects and jQuery objects
+		// * Reference documentation to locate correct library calls for a given operation
+
+	## Outline
+
+	**Beginning** [10 mins]
+	* Learning objectives on the board
+	* Framing - why jQuery?
+
+	## Lesson Plan
+
+	#### Intro [10 mins]
+
+	Framing:
+	* Explain the purpose of jQuery as making our code easier to write and cross-browser compatible
+	* Describe a library as a set of utilities/code that you can use for free!
+
+	#### Demo [15 mins]
+
+	1. Bring up some webpage and open the console.
+	* Get a reference to an element using jQuery. Call `.text()` on it
+	* Describe the difference. Highlight in jQuery we're calling functions...
+
+	#### Exercise [10 mins]
+	 * demonstrate the selector that is a string argument to $
+	1. Grab all the `p` tags
+	* Grab all of the elements with class `.muffin`
+	* Grab an `h1`
+
+	Review. 
+
+	#### Groups [30 mins]
+
+	Break the class into 6 groups. Assign each one of the following. Ask them to spend 5 minutes researching the jQuery docs to find the relevant code. No coding, just research. http://api.jquery.com/
+
+	* reading the class of an element
+	* appending an element
+	* click event listener
+	* setting an id
+	* reading the input value
+	* adding a class to an element
+
+	Collect the answers from each group and write on the board.
 
 	//Grabbing elements
 
@@ -375,18 +422,18 @@ var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'puddin
 	//In class exercise:
 		//select all the p tags in a strong
 
-		<p>
-			<strong class='bands'>Backstreet Boys</strong>
-		</p>
-		<p>
-			<strong>cat</strong>
-		</p>
-		<p>
-			<strong class='bands'>N'Sync</strong>
-		</p>
-		<p>
-			<strong class='bands'>Five</strong>
-		</p>
+		// <p>
+		// 	<strong class='bands'>Backstreet Boys</strong>
+		// </p>
+		// <p>
+		// 	<strong>cat</strong>
+		// </p>
+		// <p>
+		// 	<strong class='bands'>N'Sync</strong>
+		// </p>
+		// <p>
+		// 	<strong class='bands'>Five</strong>
+		// </p>
 
 	//CHILDREN
 		<ul id="animalList">
@@ -400,8 +447,6 @@ var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'puddin
 		list.children
 			//what can I do with this now?
 			//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
-
-
 
 	//BY REFERENCE
 		//oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference - that’s why you can change its properties and they change on screen
