@@ -1,0 +1,22 @@
+- did an intro into jQuery
+	- selected all p tags
+	- got to specific ones using .eq
+	- did on click buttons for jQuery
+		- change paragraph text
+		- change the background color to blue
+
+- this lesson
+	- should go into how to create elements and add them to the page in detail
+	- how to delete elements on the page
+	- document.ready
+	- on key press
+	- on hover
+	- anything else I find interesting in the previous intro to js class
+
+- second half of the class should be focused around creating your game 
+
+	- by the end of the class i'd like you to submit to me pseudocode
+
+	- make students aware that we will deploy this to the web
+
+	- we will also present these on December 3rd 2015 

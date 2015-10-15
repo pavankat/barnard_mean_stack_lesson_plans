@@ -368,113 +368,101 @@ var vanillaPuddingCake = new Dessert('vanilla pudding cake', ['vanilla', 'puddin
 		// * Distinguish between native DOM element objects and jQuery objects
 		// * Reference documentation to locate correct library calls for a given operation
 
-	## Outline
+	//I do - 5 minutes - on click events, call back intro
 
-	**Beginning** [10 mins]
-	* Learning objectives on the board
-	* Framing - why jQuery?
+	```
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
 
-	## Lesson Plan
+		<p>It's night time.</p>
 
-	#### Intro [10 mins]
+		<p>It's not night time in Bejing.</p>
 
-	Framing:
-	* Explain the purpose of jQuery as making our code easier to write and cross-browser compatible
-	* Describe a library as a set of utilities/code that you can use for free!
+		<button id="changeSecond">change the second paragraph tag</button>
 
-	#### Demo [15 mins]
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		//references the paragraph tag above
+		var p = $('p');
 
-	1. Bring up some webpage and open the console.
-	* Get a reference to an element using jQuery. Call `.text()` on it
-	* Describe the difference. Highlight in jQuery we're calling functions...
+		p.eq(0).text();
 
-	#### Exercise [10 mins]
-	 * demonstrate the selector that is a string argument to $
-	1. Grab all the `p` tags
-	* Grab all of the elements with class `.muffin`
-	* Grab an `h1`
+		p.eq(1).text();
 
-	Review. 
+		$('#changeSecond').on('click', function(){
+			p.eq(1).text('blah blah'); //change the text of the second paragraph
+		});
 
-	#### Groups [30 mins]
+	</script>
+	</body>
+	</html>
+	```
 
-	Break the class into 6 groups. Assign each one of the following. Ask them to spend 5 minutes researching the jQuery docs to find the relevant code. No coding, just research. http://api.jquery.com/
+	//You do - 5 minutes
 
-	* reading the class of an element
-	* appending an element
-	* click event listener
-	* setting an id
-	* reading the input value
-	* adding a class to an element
+	// * paste the above code to the students in slack *
+	// make a button that changes the first paragraph's text
+	// make a button that sets the background of the page to blue
 
-	Collect the answers from each group and write on the board.
+	//solution:
 
-	//Grabbing elements
+	```
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
 
+		<p>It's night time.</p>
 
-	//Grabbing by name
+		<p>It's not night time in Bejing.</p>
 
+		<button id="changeSecond">change the second paragraph tag</button>
 
-	//Grabbing all by name
+		<button id="changeFirst">change first</button>
 
-	//Getting things by class, by tag name and class, by tag name and inner tag name
+		<button id="makeItBlue">Make it blue</button>
 
-	//In class exercise:
-		//select all the p tags in a strong
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		//references the paragraph tag above
+		var p = $('p');
 
-		// <p>
-		// 	<strong class='bands'>Backstreet Boys</strong>
-		// </p>
-		// <p>
-		// 	<strong>cat</strong>
-		// </p>
-		// <p>
-		// 	<strong class='bands'>N'Sync</strong>
-		// </p>
-		// <p>
-		// 	<strong class='bands'>Five</strong>
-		// </p>
+		p.eq(0).text();
 
-	//CHILDREN
-		<ul id="animalList">
-			<li>hi</li>
-			<li>thing</li>
-			<li>thingie</li>
-		</ul>
-			
-		var list = document.getElementById("animalList")
+		p.eq(1).text();
 
-		list.children
-			//what can I do with this now?
-			//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
+		$('#changeSecond').on('click', function(){
+			p.eq(1).text('blah blah'); //change the text of the second paragraph
+		});
 
-	//BY REFERENCE
-		//oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference - that’s why you can change its properties and they change on screen
+		// 1. make a button and change the first paragraph's text
 
-	//Getting and setting attributes of elements
+		$('#changeFirst').on('click', function(){
+			p.eq(0).text('hello');
+		})
 
-	//Creating elements
+		// 2. make a button that changes the background color to blue
+		$('#makeItBlue').on('click', function(){
+			$('body').css('background', 'blue');
+		});
+		
 
+	</script>
+	</body>
+	</html>
+	```
 
-	//Adding elements to the dom
-			
+//Homework: Start thinking of what kind of game you want to make
+	// - make an rpg game with html, css, JavaScript and jQuery
+	// 	- one player
+	// 	- story line
+	// 	- starts off with 100 health, a sword, 100 dollars. The player can fight
+	// - another type of board game
 
-	//Editing elements from the dom
-		//- grab it from the dom
-		//- edit the innerHTML
-
-	//Deleting elements from the dom
-
-
-jQuery
-	- get ga stuff
-	- give a guide of the commands for javascript and what they are in jQuery for student reference
-	- why use it -> mobile browser differences - they've accounted for - if you use the cdn - most people have it cached already - so your page will be faster
-	- people who do DOM things in straight jav
-
-	- on cick is important, on key press important
-
-//Homework: First project given
 	// - give them tic tac toe screencasts
 
 		// All screencasts are 5 minutes long max. The first two are optional, but I urge everyone to watch them.
@@ -524,10 +512,3 @@ jQuery
 		// 					alert('you won')
 		// 				}
 
-	// - make an rpg game with html, css, JavaScript and jQuery
-	// 	- one player
-	// 	- story line
-	// 	- starts off with 100 health, a sword, 100 dollars. The player can fight
-	// - another type of board game
-
-	// - pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
