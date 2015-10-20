@@ -1,5 +1,29 @@
 Objectives:
 - Students will be able to wait for the document to load before executing their JavaScript code.
+- Students will be able to use javascript to
+	- invoke a particular function on click 
+	- invoke multiple functions on click
+	- add a class
+	- remove a class
+	- make a link go nowhere on click
+	- attach a mouseenter mouseleave effect on an element
+
+	- hide something and then show something
+
+	- grab values from a form 
+	- do form validation
+
+	- get the children of an element
+
+	- create elements, 
+	- set attributes of elements, 
+	- add elements to the document 
+	- and remove elements from the document
+
+
+
+- need to finish updating objectives
+- need to finish putting the examples and exercises into the normal repo
 
 // get the dates that we don't have class
 
@@ -63,19 +87,8 @@ You do - 10 minutes
 	exercise-6.html
 
 I do 
-	//CHILDREN
-		<ul id="animalList">
-			<li>hi</li>
-			<li>thing</li>
-			<li>thingie</li>
-		</ul>
-			
-		var list = $("#animalList")
-
-		list.children
-			//what can I do with this now?
-			//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
-
+	- show how to get the children of an element
+		- use example-5.html
 
 You do
 	What does this return in the console?
@@ -90,22 +103,12 @@ I do
 
 //need some kind of exercise for this
 I do 
-	//Creating elements and setting attributes of elements
-		var div1 = $("<div/>");
+	- Creating elements
+	- setting attributes of elements
+	- adding elements to the document
+	- removing elements from the document
 
-		div1.html('<p>stuff</p>'); //remind class that this method can be used to edit an element that already exists in the document too
-
-		div1.attr('id', 'firstDiv'); //remind class that this method can be used to edit an element that already exists in the document too
-
-		div1.appendTo(body); //goes to the end 
-			//to put it in the beginning, there's a function called prepend
-
-		div1.appendTo( $( "#container" ) ); //adds element to the document
-
-		To create a HTML element, $("<div/>") or $("<div></div>") is preferred. Then you can use either appendTo , append , before , after and etc,. to insert the new element to the DOM. I would recommend the first option, where you actually build elements using jQuery.May 16, 2012
-			
-	//Deleting elements from the dom
-		$('#titanic').remove();
+		- use example-4.html to explain
 
 	//Data attributes in jQuery
 	$('.toggle img').data('block', 'something');

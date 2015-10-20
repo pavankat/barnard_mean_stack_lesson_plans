@@ -126,21 +126,15 @@
 
         <div class="row marginUpSmall marginDown">
         	<div class="col-md-2"></div>
-        	<div class="col-md-8">
+        	<div id="content" class="col-md-8">
 
-        		<div id="say-hi">
+				<img id="cat" src="http://img.memecdn.com/kitty-spring-collection-2015_c_4812097.webp">      
 
-        		</div>
+				<br><br>
+				<button id="delete">delete the picture above</button>  	
+				<br>
 
-        		<form>
-    	    		First name:<br>
-    	    		<input type="text" id="firstname">
-    	    		<br>
-    	    		Last name:<br>
-    	    		<input type="text" id="lastname">
-        		</form>
-
-        		<button id="make-it-happen">Make it happen</button>
+				<button id="addContent">add a div below with an image inside of it</button>	
 
         	</div>
         	<div class="col-md-2"></div>
@@ -157,33 +151,25 @@
 	<script type="text/javascript">
 		$( document ).ready(function() {
 
-			function validateForm(){
-				var first = $('#firstname').val();
-				var last = $('#lastname').val();
+			//Creating elements and setting attributes of elements
+			
+			$('#addContent').on('click', function(){
+				var div1 = $("<div/>"); //this creates a div element. It doesn't get put onto the page yet
 
-				if (first == ''){
-					return false;
-				}else if(last == ''){
-					return false;
-				}else{
-					return true;
-				}
-			}
+				div1.html('<img src="http://amazinganimalphotos.com/wp-content/uploads/2014/11/funny-cat-memes.jpg">'); //remind class that this method can be used to edit an element that already exists in the document too
 
-			$('#make-it-happen').on('click', function(){
-				var first = $('#firstname').val();
-				var last = $('#lastname').val();
+				div1.attr('id', 'firstDiv'); //remind class that this method can be used to edit an element that already exists in the document too
 
-				var valid = validateForm();
+				div1.appendTo( $( "#content" ) ); //adds element to the end of the element with an id of content
 
-				if (valid){ 
-					var message = "Hey what's going on " + first + " " + last + "?";
-					$('#say-hi').text(message);
-				}else{
-					$('#say-hi').html("<p class='red'>Please fill in everything first.</p>");
-				}
-				
+				//alternatively I could have created an <img/> tag, and set the src attribute ot the url of the image above and then appended that to the element with an id of content
 			});
+
+			//Deleting elements from the dom on click the button with an id of delete
+			$('#delete').on('click', function(){
+				$('#cat').remove();
+			});
+			
 			
 		});
 	</script>
