@@ -152,34 +152,44 @@
 				//step 2:
 				//add the class style-font to the element with an id of pug-text
 				//add the class style-font to the element with an id of cat-text
+				$('#pug-text').addClass('style-font');
+				$('#cat-text').addClass('style-font');
 			}
 
 			function removeFirstStyle(){
 				//step 3:
 				//remove the class style-font to the element with an id of pug-text
 				//remove the class style-font to the element with an id of cat-text
+				$('#pug-text').removeClass('style-font');
+				$('#cat-text').removeClass('style-font');
 			}
 
 			function addSecondStyle(){
 				//step 4:
 				//add the class style-font-different to the element with an id of pug-text
 				//add the class style-font-different to the element with an id of cat-text
+				$('#pug-text').addClass('style-font-different');
+				$('#cat-text').addClass('style-font-different');
 			}
 
 			function removeSecondStyle(){
 				//step 5:
 				//remove the class style-font-different to the element with an id of pug-text
 				//remove the class style-font-different to the element with an id of cat-text
+				$('#pug-text').removeClass('style-font-different');
+				$('#cat-text').removeClass('style-font-different');
 			}
 
 		    $("#pug-image").on({
 		        mouseenter: function () {
 		            //stuff to do on mouse enter
 		            //step 6: fade in the element with an id of pug-text
+		            $('#pug-text').fadeIn('slow');
 		        },
 		        mouseleave: function () {
 		            //stuff to do on mouse leave
 		            //step 7: fade out the element with an id of pug-text
+		            $('#pug-text').fadeOut('slow');
 		        }
 		    });
 
@@ -188,25 +198,35 @@
 		        mouseenter: function () {
 		            //stuff to do on mouse enter
 		            //step 8: fade in the element with an id of cat-text
+		            $('#cat-text').fadeIn('slow');
 		        },
 		        mouseleave: function () {
 		            //stuff to do on mouse leave
 		            //step 9: fade out the element with an id of cat-text
+		            $('#cat-text').fadeOut('slow');
 		        }
 		    });
 
 		    $('#change-text').on('click', function(){
 		    	//step 10: invoke the removeSecondStyle function here
 		    	//step 11: invoke the addFirstStyle function here
+		    	removeSecondStyle();
+		    	addFirstStyle();
+
 		    });
 
 		    $('#change-text-again').on('click', function(){
 		    	//step 12: invoke the removeFirstStyle function here
 		    	//step 13: invoke the addSecondStyle function here
+		    	removeFirstStyle();
+		    	addSecondStyle();
+
 		    });
 
 		    $('#reset-text').on('click', function(){
 		    	//step 14: figure out and code in what functions to invoke to guarantee the text gets reset (particularly the text inside the elements with an id of cat-text and pug-text)
+		    	removeFirstStyle();
+		    	removeSecondStyle();
 		    });
 
 		    //leave this alone
@@ -222,6 +242,10 @@
 		    			- hide the element with an id of min
 		    			- show the element with an id of max
 		    	*/
+		    	$('#call-to-action').removeClass('height-maximized');
+		    	$('#call-to-action').addClass('height-minimized');
+		    	$('#min').hide();
+		    	$('#max').show();
 
 		    	return false;
 		    });
@@ -234,12 +258,17 @@
 		    			- hide the element with an id of max
 		    			- show the element with an id of min
 		    	*/
+		    	$('#call-to-action').removeClass('height-minimized');
+		    	$('#call-to-action').addClass('height-maximized');
+		    	$('#max').hide();
+		    	$('#min').show();
 
 		    	return false;
 		    });
 
 		    $('#close').on('click', function(){
 		    	//step 17: hide the element with an id of call-to-action
+		    	$('#call-to-action').hide();
 
 		    	return false;
 		    });
