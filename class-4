@@ -1,91 +1,68 @@
 Objectives:
 - Students will be able to wait for the document to load before executing their JavaScript code.
 
+// get the dates that we don't have class
 
-I do
+// brain storm game at the end of class
+// - pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
+
+//students should be able to make an rpg game or a board game
+
+I do - 2 minutes
 	- show how $( document ).ready(function() { ... }); works
 		- example-1.html			
 		- example-1.js
 			- * take out the $( document ).ready ...
-			
-They do
+
+They do - 5 minutes
 	- exercise-1
-	- exercise-2 (bonus)
 
-	show how to invoke multiple functions on click of a button
+I do - 15 minutes
+	- show how to invoke a particular function on click 
+	- show how to invoke multiple functions on click
+	- show how to add a class
+	- show how to remove a class
+	- show how to return false; on click of a link
+	- show how to do a mouseenter mouseleave effect on an element
 
-	show how to add a class to an element on click
+		- Show it all with 
+			- example-2.html
 
-	show how to remove a class from an element on click
+You do - 10 minutes
+	- exercise-2.html
 
-	show how to do a mouseenter mouseleave effect on an element
+I do - 2 minutes
+	- show how to hide something and then show something
 
-	talk about on click of a link and using return false;
+You do - 10 minutes
+	- exercise-3.html
 
-You do - exercise-1.html
-
-You do - exercise-2.html
-
-You do - exercise-3.html
-
-I do
+I do - 10 minutes
 	talk about $(this) if looping over p tags in .each, if clicking on a div with p tags - if else
 
 	grab the text of something and check if it's a value and alert to the screen if it is
 
-You do
+You do - 10 minutes
 	exercise-4.html
-	
+
+I do - 2 minutes
+	parseInt for an integer in a string
+
+	"1" + "1" = "11"
+
+	parseInt("1") + parseInt("1") = 2
+
+You do - 10 minutes
 	exercise-5.html
 
 I do 
 	example-3.html 
 		- go over forms, grabbing values from forms, form validation with JS
 
-You do 
+You do - 10 minutes
 	exercise-6.html
 
-
-
-	// get the dates that we don't have class
-	
-	// brain storm game
-	// - pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
-
-
-
-	//students should be able to make an rpg game/board game
-
-
-
-
-jquery
-	//Grabbing elements
-
-
-	//Grabbing by name
-
-
-	//Grabbing all by name
-
-	//Getting things by class, by tag name and class, by tag name and inner tag name
-
-	//In class exercise:
-		//select all the p tags in a strong
-
-		// <p>
-		// 	<strong class='bands'>Backstreet Boys</strong>
-		// </p>
-		// <p>
-		// 	<strong>cat</strong>
-		// </p>
-		// <p>
-		// 	<strong class='bands'>N'Sync</strong>
-		// </p>
-		// <p>
-		// 	<strong class='bands'>Five</strong>
-		// </p>
-
+I do 
 	//CHILDREN
 		<ul id="animalList">
 			<li>hi</li>
@@ -93,25 +70,42 @@ jquery
 			<li>thingie</li>
 		</ul>
 			
-		var list = document.getElementById("animalList")
+		var list = $("#animalList")
 
 		list.children
 			//what can I do with this now?
 			//I can loop over it look for things that have an attribute equal to something and change that attribute based on other variables on the page
 
+
+You do
+	What does this return in the console?
+
+	$('body').children();
+
+I do 
+	- remind students about reference
+
 	//BY REFERENCE
 		//oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference - that’s why you can change its properties and they change on screen
 
-	//Getting and setting attributes of elements
+//need some kind of exercise for this
+I do 
+	//Creating elements and setting attributes of elements
+		var div1 = $("<div/>");
 
-	//Creating elements
+		div1.html('<p>stuff</p>'); //remind class that this method can be used to edit an element that already exists in the document too
 
+		div1.attr('id', 'firstDiv'); //remind class that this method can be used to edit an element that already exists in the document too
 
-	//Adding elements to the dom
+		div1.appendTo(body); //goes to the end 
+			//to put it in the beginning, there's a function called prepend
+
+		div1.appendTo( $( "#container" ) ); //adds element to the document
+
+		To create a HTML element, $("<div/>") or $("<div></div>") is preferred. Then you can use either appendTo , append , before , after and etc,. to insert the new element to the DOM. I would recommend the first option, where you actually build elements using jQuery.May 16, 2012
 			
-
-	//Editing elements from the dom
-		//- grab it from the dom
-		//- edit the innerHTML
-
 	//Deleting elements from the dom
+		$('#titanic').remove();
+
+	//Data attributes in jQuery
+	$('.toggle img').data('block', 'something');

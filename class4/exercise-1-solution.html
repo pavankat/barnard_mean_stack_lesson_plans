@@ -47,13 +47,18 @@
 
 	<script type="text/javascript">
 
-		$('#day').on('click', function(){
-			$('body').css('background-color','yellow');
+		$( document ).ready(function() {
+			//step 1: when the user clicks on the day button make the page turn yellow
+			$('#day').on('click', function(){
+				$('body').css('background-color','yellow');
+			});
+
+			//step 2: when the user clicks on the night button make the page turn black
+			$('#night').on('click', function(){
+				$('body').css('background-color','black');
+			});
 		});
 
-		$('#night').on('click', function(){
-			$('body').css('background-color','black');
-		});
 	</script>
 
 </body>
