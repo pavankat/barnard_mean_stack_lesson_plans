@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		body {
+		  padding-top: 50px;
+		}
+		.starter-template {
+		  padding: 40px 15px;
+		}
+
+		.margin-up {
+			margin-top: 25px;
+		}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Exercise 4</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Home</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	    <h1 id="main-heading" class="text-center">Resumes</h1>
+	    <p class="lead text-center" id="heading-text">What should your resume look like?</p>
+
+	    <div class="row">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<p>make two resumes</p>
+	    		<ul>
+	    			<li>one for search engines full of keywords
+	    				<ul>
+	    					<li>bad resume don't bring this in </li>
+	    					<li>good resume for search engines and databases</li>
+	    				</ul>
+	    			</li>
+
+	    			<li>clean one for when you come in for an interview </li>
+	    		</ul>
+
+	    		<h3>Resume would look kind of like this</h3>
+	    		<ul>
+	    			<li>project 1: bottom right corner pop up triggered on hover of invisible div (link)</li>
+	    			<li>project 2: exit intent pop up (link)</li>
+	    			<li>project 3: javascript game with Knockout.js (link)</li>
+	    		</ul>
+	    				
+	    		<h2>colors</h2>
+	    		<ul>
+	    			<li>blue</li>
+	    			<li>green</li>
+	    			<li>red</li>
+	    			<li>green</li>
+	    			<li>red</li>
+	    			<li>blue</li>
+	    		</ul>
+
+	    		<button id="set-colors">set list colors</button>
+	    		<button id="reset-colors">reset list colors</button>
+	    		<button id="show-image-of-text">show image of text</button>
+
+	    		<h2>if, else if, else, html()</h2>
+	    		<div id="text-value">dog</div>
+
+	    		<div id="image">
+
+	    		</div>
+	    	</div>
+	    </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			$('#set-colors').on('click', function(){
+				//step 1: make it so if you click on this button, the color words will get colored the color they are
+			});
+
+			$('#reset-colors').on('click', function(){
+				//step 2: make it so the if you click on this button then the color words get set back to black
+			});
+
+			$('#show-image-of-text').on('click', function(){
+				/*
+					step 3: make it so if you click on this button then your program will check the div with an id of text-value. 
+
+						- If the text is dog, then put an image of a dog into the div with an id of image
+
+						- If the text is city, then put an image from the tv show broad city into the div with an id of image
+
+						- If the text is agent, then put an image of a secret agent into the div with an id of image
+
+						- If the text is any other word, then put an image of a cat into the div with an id of image
+
+				*/
+			});
+
+		});
+	</script>
+
+</body>
+</html>

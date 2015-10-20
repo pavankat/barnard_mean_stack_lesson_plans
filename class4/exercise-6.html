@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		.marginUp {
+			margin-top: 75px;
+		}
+
+		.marginDown {
+			margin-bottom: 200px;
+		}
+
+		.marginUpSmall {
+			margin-top: 25px;
+		}
+
+		.marginDownSmall{
+			margin-bottom: 25px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="6.html">5th Intro to JS Class</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Home</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	    <h1 id="main-heading" class="text-center marginUp">Resumes</h1>
+	    <p class="lead text-center" id="heading-text">What should your resume look like?</p>
+
+	    <div class="row marginDownSmall">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<p>make two resumes</p>
+	    		<ul>
+	    			<li>one for search engines full of keywords
+	    				<ul>
+	    					<li>bad resume don't bring this in </li>
+	    					<li>good resume for search engines and databases</li>
+	    				</ul>
+	    			</li>
+
+	    			<li>clean one for when you come in for an interview </li>
+	    		</ul>
+
+	    		<h3>Resume would look kind of like this</h3>
+	    		<ul>
+	    			<li>project 1: bottom right corner pop up triggered on hover of invisible div (link)</li>
+	    			<li>project 2: exit intent pop up (link)</li>
+	    			<li>project 3: javascript game with Knockout.js (link)</li>
+	    		</ul>
+	    		
+	    	</div>
+	    </div>
+
+
+	    <div class="row marginDown">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<h2>Resume Generator</h2>
+
+	    		<div id="resume-goes-here">
+
+	    		</div>
+
+	    		<form>
+		    		First name:<br>
+		    		<input type="text" id="firstname">
+		    		<br>
+		    		Last name:<br>
+		    		<input type="text" id="lastname"><br>
+
+		    		Phone Number:<br>
+		    		<input type="text" id="phone-number">
+	    		</form>
+
+	    		<button id="generate-resume">Generate Resume</button>
+	    	</div>
+	    </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<script src="jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			// step 1: add in email, most recent position (company, location, your position there, your responsibilities/wins), your location, skllls, college, major, minor
+			
+			// step 2: add in validation so that all fields must be filled
+
+			function genResume(){
+				var first = $('#firstname').val();
+				var last = $('#lastname').val();
+				var phone = $('#phone-number').val()
+
+				var line1 = "<h2>" + "Resume of " + first + " " + last + "</h2>";
+				var line2 = "<p>" + "Phone number: " + phone + "</p>";
+
+				var allLines = line1 + line2;
+
+				$('#resume-goes-here').html(allLines);
+			}
+
+			$('#generate-resume').on('click', genResume);
+
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- homework make the bottom thing pop up only after they hover over something in the middle of the page -->
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<style type="text/css">
+		.style-font {
+			color:red;
+			border: 16px solid #b5a759;
+			letter-spacing:1pt;
+			word-spacing:4pt;
+			font-size:18px;
+			text-align:left;
+			font-family:arial, helvetica, sans-serif;
+			line-height:2;
+		}
+
+		.style-font-different {
+			font-weight: bold;
+			color:blue;
+			line-height:3;
+		}
+
+		#call-to-action {
+			position: fixed;
+			bottom: 0;
+			right: 50px;
+			background: red;
+			padding: 20px;
+			width: 200px;
+			z-index: 1;
+		}
+
+		.height-maximized {
+			height: 250px;
+		}
+
+		.height-minimized {
+			height: 50px;
+		}
+
+		#close {
+			position: absolute;
+			bottom: 0;
+			right: 10px;
+			top: 10px;
+		}
+
+		#min, #max {
+			position: absolute;
+			bottom: 0;
+			right: 30px;
+			top: 10px;
+			font-size:18px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="height-maximized" id="call-to-action">
+		<a href="#" id="max">+</a> <a href="#" id="min">-</a> <a href="#" id="close">X</a>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<img src="http://i.ytimg.com/vi/pzPxhaYQQK8/hqdefault.jpg" width="400" height="300" alt="pug" id="pug-image">
+
+			<p id="pug-text">This is a pug.</p>
+		</div>
+		<div class="col-md-6">
+			<img src="http://i.huffpost.com/gen/1860407/thumbs/o-BLACK-FOOTED-CAT-KITTENS-facebook.jpg" width="400" height="300" alt="cat" id="cat-image">
+
+			<p id="cat-text">This is a cat.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2 col-md-offset-5">
+			<button id="change-text">change text</button>
+			<button id="change-text-again">change text again</button>
+
+			<button id="reset-text">reset text</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus purus et turpis laoreet, vitae lobortis risus ornare. Aenean dapibus egestas purus a mattis. Etiam massa velit, facilisis ac luctus vitae, feugiat sit amet dolor. Vestibulum est arcu, porttitor in mauris id, bibendum tincidunt mauris. Mauris elementum nisl eget condimentum sodales. Aenean aliquet augue a turpis egestas vulputate. Cras luctus at mi a efficitur. Nulla at elit in purus dapibus hendrerit vel sit amet justo. In quis dignissim dui. Aliquam aliquet nunc et mauris vestibulum, sit amet condimentum nibh varius. Nullam imperdiet mi eget orci molestie, vitae viverra ante interdum. In sit amet ipsum gravida, rutrum ligula at, dapibus mi. Donec sodales sem nunc, et porta massa pulvinar eu. Quisque quis vehicula velit, vel scelerisque arcu. Mauris sem libero, blandit ut nunc eget, sagittis ornare libero.</p>
+
+			<p>Nullam pretium elit mi. Donec eget tempor nulla. Maecenas efficitur id sapien id ultrices. Nam rhoncus viverra porta. In eu tellus urna. Sed vitae erat eget magna elementum sodales non quis magna. Sed est magna, malesuada sed molestie quis, accumsan et velit. Vivamus in urna quam. Vestibulum aliquet ipsum egestas, mollis nibh eu, dignissim elit. Nam sed quam ac enim tristique pulvinar sed quis sem. Vestibulum non urna varius, finibus massa at, gravida libero. Aliquam quis neque sed odio ornare varius id non turpis. In enim nibh, rhoncus eget dolor sed, faucibus aliquet erat.</p>
+
+			<p>In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In gravida cursus nibh, vitae mattis libero efficitur et. Ut nulla ligula, blandit eu turpis rhoncus, ultricies lacinia nunc. Vivamus sem mauris, malesuada eget ultrices eu, dignissim non mauris. Mauris in eros arcu. Nulla tristique massa dui, sit amet tincidunt nisl scelerisque eu.</p>
+
+			<p>Etiam lobortis, enim quis faucibus tempus, sapien purus feugiat lectus, non aliquam magna lacus vitae nisl. Aliquam consectetur arcu ultricies nisi lobortis auctor. Suspendisse porta accumsan scelerisque. In blandit tempor commodo. Nam rutrum velit elit, a ultrices tellus lobortis at. Pellentesque et dictum tortor, at blandit orci. Pellentesque ut dui cursus, vehicula eros sed, semper ligula.</p>
+
+			<p>Nullam consectetur ante rhoncus tellus rhoncus blandit. Fusce ultrices nunc eu risus egestas semper. Integer velit lorem, dapibus nec enim et, finibus iaculis magna. Suspendisse facilisis ante et blandit vulputate. Praesent eros orci, rhoncus a imperdiet a, laoreet vel nisl. Nulla vulputate tristique ex, semper lacinia ex maximus vitae. Curabitur et tempus massa, sed vestibulum massa.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus purus et turpis laoreet, vitae lobortis risus ornare. Aenean dapibus egestas purus a mattis. Etiam massa velit, facilisis ac luctus vitae, feugiat sit amet dolor. Vestibulum est arcu, porttitor in mauris id, bibendum tincidunt mauris. Mauris elementum nisl eget condimentum sodales. Aenean aliquet augue a turpis egestas vulputate. Cras luctus at mi a efficitur. Nulla at elit in purus dapibus hendrerit vel sit amet justo. In quis dignissim dui. Aliquam aliquet nunc et mauris vestibulum, sit amet condimentum nibh varius. Nullam imperdiet mi eget orci molestie, vitae viverra ante interdum. In sit amet ipsum gravida, rutrum ligula at, dapibus mi. Donec sodales sem nunc, et porta massa pulvinar eu. Quisque quis vehicula velit, vel scelerisque arcu. Mauris sem libero, blandit ut nunc eget, sagittis ornare libero.</p>
+
+			<p>Nullam pretium elit mi. Donec eget tempor nulla. Maecenas efficitur id sapien id ultrices. Nam rhoncus viverra porta. In eu tellus urna. Sed vitae erat eget magna elementum sodales non quis magna. Sed est magna, malesuada sed molestie quis, accumsan et velit. Vivamus in urna quam. Vestibulum aliquet ipsum egestas, mollis nibh eu, dignissim elit. Nam sed quam ac enim tristique pulvinar sed quis sem. Vestibulum non urna varius, finibus massa at, gravida libero. Aliquam quis neque sed odio ornare varius id non turpis. In enim nibh, rhoncus eget dolor sed, faucibus aliquet erat.</p>
+
+			<p>In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In gravida cursus nibh, vitae mattis libero efficitur et. Ut nulla ligula, blandit eu turpis rhoncus, ultricies lacinia nunc. Vivamus sem mauris, malesuada eget ultrices eu, dignissim non mauris. Mauris in eros arcu. Nulla tristique massa dui, sit amet tincidunt nisl scelerisque eu.</p>
+
+			<p>Etiam lobortis, enim quis faucibus tempus, sapien purus feugiat lectus, non aliquam magna lacus vitae nisl. Aliquam consectetur arcu ultricies nisi lobortis auctor. Suspendisse porta accumsan scelerisque. In blandit tempor commodo. Nam rutrum velit elit, a ultrices tellus lobortis at. Pellentesque et dictum tortor, at blandit orci. Pellentesque ut dui cursus, vehicula eros sed, semper ligula.</p>
+
+			<p>Nullam consectetur ante rhoncus tellus rhoncus blandit. Fusce ultrices nunc eu risus egestas semper. Integer velit lorem, dapibus nec enim et, finibus iaculis magna. Suspendisse facilisis ante et blandit vulputate. Praesent eros orci, rhoncus a imperdiet a, laoreet vel nisl. Nulla vulputate tristique ex, semper lacinia ex maximus vitae. Curabitur et tempus massa, sed vestibulum massa.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus purus et turpis laoreet, vitae lobortis risus ornare. Aenean dapibus egestas purus a mattis. Etiam massa velit, facilisis ac luctus vitae, feugiat sit amet dolor. Vestibulum est arcu, porttitor in mauris id, bibendum tincidunt mauris. Mauris elementum nisl eget condimentum sodales. Aenean aliquet augue a turpis egestas vulputate. Cras luctus at mi a efficitur. Nulla at elit in purus dapibus hendrerit vel sit amet justo. In quis dignissim dui. Aliquam aliquet nunc et mauris vestibulum, sit amet condimentum nibh varius. Nullam imperdiet mi eget orci molestie, vitae viverra ante interdum. In sit amet ipsum gravida, rutrum ligula at, dapibus mi. Donec sodales sem nunc, et porta massa pulvinar eu. Quisque quis vehicula velit, vel scelerisque arcu. Mauris sem libero, blandit ut nunc eget, sagittis ornare libero.</p>
+
+			<p>Nullam pretium elit mi. Donec eget tempor nulla. Maecenas efficitur id sapien id ultrices. Nam rhoncus viverra porta. In eu tellus urna. Sed vitae erat eget magna elementum sodales non quis magna. Sed est magna, malesuada sed molestie quis, accumsan et velit. Vivamus in urna quam. Vestibulum aliquet ipsum egestas, mollis nibh eu, dignissim elit. Nam sed quam ac enim tristique pulvinar sed quis sem. Vestibulum non urna varius, finibus massa at, gravida libero. Aliquam quis neque sed odio ornare varius id non turpis. In enim nibh, rhoncus eget dolor sed, faucibus aliquet erat.</p>
+
+			<p>In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In gravida cursus nibh, vitae mattis libero efficitur et. Ut nulla ligula, blandit eu turpis rhoncus, ultricies lacinia nunc. Vivamus sem mauris, malesuada eget ultrices eu, dignissim non mauris. Mauris in eros arcu. Nulla tristique massa dui, sit amet tincidunt nisl scelerisque eu.</p>
+
+			<p>Etiam lobortis, enim quis faucibus tempus, sapien purus feugiat lectus, non aliquam magna lacus vitae nisl. Aliquam consectetur arcu ultricies nisi lobortis auctor. Suspendisse porta accumsan scelerisque. In blandit tempor commodo. Nam rutrum velit elit, a ultrices tellus lobortis at. Pellentesque et dictum tortor, at blandit orci. Pellentesque ut dui cursus, vehicula eros sed, semper ligula.</p>
+
+			<p>Nullam consectetur ante rhoncus tellus rhoncus blandit. Fusce ultrices nunc eu risus egestas semper. Integer velit lorem, dapibus nec enim et, finibus iaculis magna. Suspendisse facilisis ante et blandit vulputate. Praesent eros orci, rhoncus a imperdiet a, laoreet vel nisl. Nulla vulputate tristique ex, semper lacinia ex maximus vitae. Curabitur et tempus massa, sed vestibulum massa.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus purus et turpis laoreet, vitae lobortis risus ornare. Aenean dapibus egestas purus a mattis. Etiam massa velit, facilisis ac luctus vitae, feugiat sit amet dolor. Vestibulum est arcu, porttitor in mauris id, bibendum tincidunt mauris. Mauris elementum nisl eget condimentum sodales. Aenean aliquet augue a turpis egestas vulputate. Cras luctus at mi a efficitur. Nulla at elit in purus dapibus hendrerit vel sit amet justo. In quis dignissim dui. Aliquam aliquet nunc et mauris vestibulum, sit amet condimentum nibh varius. Nullam imperdiet mi eget orci molestie, vitae viverra ante interdum. In sit amet ipsum gravida, rutrum ligula at, dapibus mi. Donec sodales sem nunc, et porta massa pulvinar eu. Quisque quis vehicula velit, vel scelerisque arcu. Mauris sem libero, blandit ut nunc eget, sagittis ornare libero.</p>
+
+			<p>Nullam pretium elit mi. Donec eget tempor nulla. Maecenas efficitur id sapien id ultrices. Nam rhoncus viverra porta. In eu tellus urna. Sed vitae erat eget magna elementum sodales non quis magna. Sed est magna, malesuada sed molestie quis, accumsan et velit. Vivamus in urna quam. Vestibulum aliquet ipsum egestas, mollis nibh eu, dignissim elit. Nam sed quam ac enim tristique pulvinar sed quis sem. Vestibulum non urna varius, finibus massa at, gravida libero. Aliquam quis neque sed odio ornare varius id non turpis. In enim nibh, rhoncus eget dolor sed, faucibus aliquet erat.</p>
+
+			<p>In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In gravida cursus nibh, vitae mattis libero efficitur et. Ut nulla ligula, blandit eu turpis rhoncus, ultricies lacinia nunc. Vivamus sem mauris, malesuada eget ultrices eu, dignissim non mauris. Mauris in eros arcu. Nulla tristique massa dui, sit amet tincidunt nisl scelerisque eu.</p>
+
+			<p>Etiam lobortis, enim quis faucibus tempus, sapien purus feugiat lectus, non aliquam magna lacus vitae nisl. Aliquam consectetur arcu ultricies nisi lobortis auctor. Suspendisse porta accumsan scelerisque. In blandit tempor commodo. Nam rutrum velit elit, a ultrices tellus lobortis at. Pellentesque et dictum tortor, at blandit orci. Pellentesque ut dui cursus, vehicula eros sed, semper ligula.</p>
+
+			<p>Nullam consectetur ante rhoncus tellus rhoncus blandit. Fusce ultrices nunc eu risus egestas semper. Integer velit lorem, dapibus nec enim et, finibus iaculis magna. Suspendisse facilisis ante et blandit vulputate. Praesent eros orci, rhoncus a imperdiet a, laoreet vel nisl. Nulla vulputate tristique ex, semper lacinia ex maximus vitae. Curabitur et tempus massa, sed vestibulum massa.</p>
+
+			<a href="#" id="dont-go-to-top">This won't go to the top</a>
+		</div>
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			//step 1: hide the elements with an id of pug-text, cat-text and max
+
+			function addFirstStyle(){
+				//step 2:
+				//add the class style-font to the element with an id of pug-text
+				//add the class style-font to the element with an id of cat-text
+			}
+
+			function removeFirstStyle(){
+				//step 3:
+				//remove the class style-font to the element with an id of pug-text
+				//remove the class style-font to the element with an id of cat-text
+			}
+
+			function addSecondStyle(){
+				//step 4:
+				//add the class style-font-different to the element with an id of pug-text
+				//add the class style-font-different to the element with an id of cat-text
+			}
+
+			function removeSecondStyle(){
+				//step 5:
+				//remove the class style-font-different to the element with an id of pug-text
+				//remove the class style-font-different to the element with an id of cat-text
+			}
+
+		    $("#pug-image").on({
+		        mouseenter: function () {
+		            //stuff to do on mouse enter
+		            //step 6: fade in the element with an id of pug-text
+		        },
+		        mouseleave: function () {
+		            //stuff to do on mouse leave
+		            //step 7: fade out the element with an id of pug-text
+		        }
+		    });
+
+		   
+		    $("#cat-image").on({
+		        mouseenter: function () {
+		            //stuff to do on mouse enter
+		            //step 8: fade in the element with an id of cat-text
+		        },
+		        mouseleave: function () {
+		            //stuff to do on mouse leave
+		            //step 9: fade out the element with an id of cat-text
+		        }
+		    });
+
+		    $('#change-text').on('click', function(){
+		    	//step 10: invoke the removeSecondStyle function here
+		    	//step 11: invoke the addFirstStyle function here
+		    });
+
+		    $('#change-text-again').on('click', function(){
+		    	//step 12: invoke the removeFirstStyle function here
+		    	//step 13: invoke the addSecondStyle function here
+		    });
+
+		    $('#reset-text').on('click', function(){
+		    	//step 14: figure out and code in what functions to invoke to guarantee the text gets reset (particularly the text inside the elements with an id of cat-text and pug-text)
+		    });
+
+		    //leave this alone
+		    $('#dont-go-to-top').on('click', function(){
+		    	return false;
+		    });
+
+		    $('#min').on('click', function(){
+		    	/*
+		    		step 15: 
+		    			- remove the height-maximized class on the element with an id of call-to-action
+		    			- add the height-minimized class on the element with an id of call-to-action
+		    			- hide the element with an id of min
+		    			- show the element with an id of max
+		    	*/
+		    	$('#call-to-action').removeClass('height-maximized');
+		    	$('#call-to-action').addClass('height-minimized');
+		    	$('#min').hide();
+		    	$('#max').show();
+
+		    	return false;
+		    });
+
+		    $('#max').on('click', function(){
+		    	/*
+		    		step 16: 
+		    			- remove the height-minimized class on the element with an id of call-to-action
+		    			- add the height-maximized class on the element with an id of call-to-action
+		    			- hide the element with an id of max
+		    			- show the element with an id of min
+		    	*/
+
+		    	return false;
+		    });
+
+		    $('#close').on('click', function(){
+		    	//step 17: hide the element with an id of call-to-action
+
+		    	return false;
+		    });
+		});
+	</script>
+
+</body>
+</html>

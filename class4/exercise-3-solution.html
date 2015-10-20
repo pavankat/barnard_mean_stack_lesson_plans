@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		body {
+		  padding-top: 50px;
+		}
+		.starter-template {
+		  padding: 40px 15px;
+		}
+
+		.margin-up {
+			margin-top: 25px;
+		}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Exercise 3</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">Home</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	    <h1 id="main-heading" class="text-center">Things you can do</h1>
+	    <p class="lead text-center" id="heading-text">We'll go over things you can do now or after you're finished with intro to jQuery/JavaScript.</p>
+
+	    <div class="row">
+	    	<div class="col-md-2"></div>
+	    	<div class="col-md-4">
+	    		<img src="http://www.verotechsolutions.net/images/118a1c4.jpg" width="300" height="200" alt="job" id="job-image">
+	    		<p id="job-text">
+	    			jobs you qualify for right now or after this class:
+	    		</p>
+	    		<ul id="jobs">
+	    			<li>email producer</li>
+	    			<li>email developer</li>
+	    			<li>web producer</li>
+	    			<li>junior product manager</li>
+	    			<li>digital producer</li>
+	    			<li>jr ux designer</li>
+	    			<li>jr front end web developer</li>
+	    			<li>jr node full stack developer</li>
+	    			<li>technical account manager</li>
+	    			<li>technical project manager</li>
+	    			<li>technical business analyst</li>
+	    		</ul>
+	    	</div>
+	    	<div class="col-md-4">
+	    		<img src="http://www.top10pot.com/wp-content/uploads/2013/07/clever-ways-to-raise-money-for-startup.jpg" width="300" height="200" alt="start up" id="startup-image">
+	    		<p id="startup-text">
+	    			Want to work for yourself?
+	    		</p>
+
+	    		<p><a href="http://www.seed-db.com/accelerators" target="_blank" id="startup-link">Apply to a seed accelerator</a></p>
+	    	</div>
+	    	<div class="col-md-2"></div>
+	    </div>
+
+	    <div class="row margin-up">
+	    	<div class="col-md-2"></div>
+	    	<div class="col-md-8">
+	    		<button id="image-disappear">make images disappear</button>
+	    		<button id="image-reappear">make images reappear</button>
+	    		<button id="text-disappear">make text disappear</button>
+	    		<button id="text-appear">make text reappear</button>
+	    	</div>
+	    	<div class="col-md-2"></div>
+	    </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			//make the buttons work above
+
+			$('#image-disappear').on('click', function(){
+				$('img').hide();
+			});
+
+			$('#image-reappear').on('click', function(){
+				$('img').show();
+			});
+
+			$('#text-disappear').on('click', function(){
+				$('#main-heading').hide();
+				$('#heading-text').hide();
+				$('#job-text').hide();
+				$('#jobs').hide();
+				$('#startup-text').hide();
+				$('#startup-link').hide();
+			});
+
+			$('#text-appear').on('click', function(){
+				$('#main-heading').show();
+				$('#heading-text').show();
+				$('#job-text').show();
+				$('#jobs').show();
+				$('#startup-text').show();
+				$('#startup-link').show();
+			});
+
+		});
+	</script>
+
+</body>
+</html>

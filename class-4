@@ -1,6 +1,52 @@
-class-4 
+Objectives:
+- Students will be able to wait for the document to load before executing their JavaScript code.
 
-jquery
+
+I do
+	- show how $( document ).ready(function() { ... }); works
+		- example-1.html			
+		- example-1.js
+			- * take out the $( document ).ready ...
+			
+They do
+	- exercise-1
+	- exercise-2 (bonus)
+
+	show how to invoke multiple functions on click of a button
+
+	show how to add a class to an element on click
+
+	show how to remove a class from an element on click
+
+	show how to do a mouseenter mouseleave effect on an element
+
+	talk about on click of a link and using return false;
+
+You do - exercise-1.html
+
+You do - exercise-2.html
+
+You do - exercise-3.html
+
+I do
+	talk about $(this) if looping over p tags in .each, if clicking on a div with p tags - if else
+
+	grab the text of something and check if it's a value and alert to the screen if it is
+
+You do
+	exercise-4.html
+	
+	exercise-5.html
+
+I do 
+	example-3.html 
+		- go over forms, grabbing values from forms, form validation with JS
+
+You do 
+	exercise-6.html
+
+
+
 	// get the dates that we don't have class
 	
 	// brain storm game
@@ -8,49 +54,12 @@ jquery
 
 
 
+	//students should be able to make an rpg game/board game
 
 
-	## Outline
 
-	**Beginning** [10 mins]
-	* Learning objectives on the board
-	* Framing - why jQuery?
 
-	## Lesson Plan
-
-	#### Intro [10 mins]
-
-	Framing:
-	* Explain the purpose of jQuery as making our code easier to write and cross-browser compatible
-	* Describe a library as a set of utilities/code that you can use for free!
-
-	#### Demo [15 mins]
-
-	1. Bring up some webpage and open the console.
-	* Get a reference to an element using jQuery. Call `.text()` on it
-	* Describe the difference. Highlight in jQuery we're calling functions...
-
-	#### Exercise [10 mins]
-	 * demonstrate the selector that is a string argument to $
-	1. Grab all the `p` tags
-	* Grab all of the elements with class `.muffin`
-	* Grab an `h1`
-
-	Review. 
-
-	#### Groups [30 mins]
-
-	Break the class into 6 groups. Assign each one of the following. Ask them to spend 5 minutes researching the jQuery docs to find the relevant code. No coding, just research. http://api.jquery.com/
-
-	* reading the class of an element
-	* appending an element
-	* click event listener
-	* setting an id
-	* reading the input value
-	* adding a class to an element
-
-	Collect the answers from each group and write on the board.
-
+jquery
 	//Grabbing elements
 
 

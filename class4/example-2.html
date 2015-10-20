@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		.marginUp {
+			margin-top: 75px;
+		}
+
+		.marginDown {
+			margin-bottom: 200px;
+		}
+
+		.marginUpSmall {
+			margin-top: 25px;
+		}
+
+		.marginDownSmall{
+			margin-bottom: 25px;
+		}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Example 3</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="6.html">Home</a></li>
+	        <li><a href="resumes.html">Resumes and a Resume Generator</a></li>
+	        <li class="active"><a href="startups.html">Start Ups and Form Validation</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	  	
+	    <h1 id="main-heading" class="text-center marginUp">
+	    	Start Ups
+
+	    </h1>
+
+
+	    <p class="lead text-center" id="heading-text">What to do?</p>
+
+	    <div class="row">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<h2>start up assumptions</h2>
+
+	    		<ul>
+	    			<li>
+	    				value assumption
+	    				<ul>
+	    					<li>do people want this?</li>
+	    					<li>do people care enough to sign up?</li>
+	    					<li>will people use it and use it again?</li>
+	    				</ul>
+	    			</li>
+	    				
+	    			<li>
+	    				leap of faith assumption
+	    				<ul>
+	    					<li>this will go viral because...</li>
+	    				</ul>
+	    			</li>
+	    		</ul>
+
+	    		<h2>de-risking assumptions</h2>
+	    			<li>
+	    				ask people (weak)
+	    				<ul>
+	    					<li>physically</li>
+	    					<li>on linkedin</li>
+	    					<li>surveys</li>
+	    					<li>on forums</li>
+	    					<li>read forums</li>
+	    				</ul>
+	    			</li>
+	    			<li>build weak mvp => best</li>
+
+	    		<h2>vision</h2>
+	    		<ul>
+	    			<li>macro thesis</li>
+	    			
+	    			<li>change space travel</li>
+	    			
+	    			<li>exit my company to ... because I will have made ___ significantly easier.</li>
+	    			
+	    			<li>exit my company to Facebook because teens don't feel comfortable on Facebook with their parents on it.</li>
+	    		</ul>
+	    			
+	    		<p>work backwards from where you want to be to where you are now and break it up into VERY SPECIFIC things that you have to do</p>
+
+	    		<h2>set goals</h2>
+	    		<ul>
+	    			<li>break your goals down</li>
+	    			<li>work toward them</li>
+	    			<li>re-evaluate your goals</li>
+	    		</ul>
+
+	    		<h2>idea generation</h2>
+	    		<ul>
+	    			<li>listen</li>
+	    			<li>use your skills</li>
+	    			<li>copy</li>
+	    		</ul>
+	    	</div>
+	    </div>
+
+
+        <div class="row marginUpSmall marginDown">
+        	<div class="col-md-2"></div>
+        	<div class="col-md-8">
+
+        		<div id="say-hi">
+
+        		</div>
+
+        		<form>
+    	    		First name:<br>
+    	    		<input type="text" id="firstname">
+    	    		<br>
+    	    		Last name:<br>
+    	    		<input type="text" id="lastname">
+        		</form>
+
+        		<button id="make-it-happen">Make it happen</button>
+
+        	</div>
+        	<div class="col-md-2"></div>
+        </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			function validateForm(){
+				var first = $('#firstname').val();
+				var last = $('#lastname').val();
+
+				if (first == ''){
+					return false;
+				}else if(last == ''){
+					return false;
+				}else{
+					return true;
+				}
+			}
+
+			$('#make-it-happen').on('click', function(){
+				var first = $('#firstname').val();
+				var last = $('#lastname').val();
+
+				var valid = validateForm();
+
+				if (valid){ 
+					var message = "Hey what's going on " + first + " " + last + "?";
+					$('#say-hi').text(message);
+				}else{
+					$('#say-hi').html("<p class='red'>Please fill in everything first.</p>");
+				}
+				
+			});
+			
+		});
+	</script>
+
+</body>
+</html>

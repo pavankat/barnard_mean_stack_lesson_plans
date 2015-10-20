@@ -1,0 +1,89 @@
+class-4-game-pseudocode
+
+my pseduo code for game:
+
+	name: zombie survivor
+
+	goal: you're in nyc, and you need to get to maine - where there's a lack of people. You want to get to your parents, autistic brother and protect them. This is your best shot of surviving. The cold weather in Maine and elevation will slow the zombies down.
+
+	game structure:	
+		- You find yourself at your favorite Manhattan restaurant - Cuban Fire. They make delicious chicken stew. All of a sudden it all goes down, zombies start eating people right outside the building. 
+
+		- it's June 1st you need to get to Maine before December 1st because traveling in the snow is very difficult.
+
+		- you have 213 days to get to Maine
+
+		- 8 hour drive to Maine from NYC - 500 miles - but it'll take longer because you'll be walking a lot
+
+		- everything you do takes time to travel 
+
+		- 6 missions
+			- mission 1
+			- mission 2
+			- mission 3
+			- mission 4 
+			- mission 5
+			- mission 6
+
+	you:
+		choose how many points you want to award to skills - 8 points you can give yourself
+
+			- speed (1/10) - hunting
+			- camping skills (1/10) - making a fire
+			- handling weapons (1/10) - hunting, killing zombies
+			- defense construction (1/10)
+			- setting up traps (1/10)
+			- first aid (1/10)
+
+		you start out with 12 food
+		everyone has health 100/100
+		everyone eats 2 food a day
+
+my game:
+	mission one:
+		- you
+		you can choose 2 out of 5 people to come with you based on supplies.
+
+		Tiniquia - Tiniquia, a vegan that teaches yoga at an upscale Manhattan Gym. Despite the buddhist lifestyle, she has spent 10 years in the peace corps, and she picked up a lot of great skills along the way.
+			- speed (1/10) - hunting
+			- camping skills (5/10) - making a fire
+			- handling weapons (1/10) - hunting, killing zombies
+			- defense construction (5/10)
+			- setting up traps (5/10)
+			- first aid (5/10)
+		Ted - Ted's a designer born and raised in Manhattan. He's been going to the shooting range with his aunt (a captain on the police force) since he was a little boy.
+			- speed (5/10) - hunting
+			- camping skills (1/10) - making a fire
+			- handling weapons (10/10) - hunting, killing zombies
+			- defense construction (1/10)
+			- setting up traps (1/10)
+			- first aid (1/10)
+		Bob - Bob's unemployed but has been a survival fanatic for the last two months after discovering a zombie show on Netflix. Unfortunately he has only finished perfecting his camping skills. He should've taken a more broad approach to his survival training.
+			- speed (1/10) - hunting
+			- camping skills (10/10) - making a fire
+			- handling weapons (1/10) - hunting, killing zombies
+			- defense construction (3/10)
+			- setting up traps (1/10)
+			- first aid (1/10)
+		Emily - With tattoos all over her arms, long brown hair, with half of it spiked up, Emily looks like one bad lady. Looks are not deceiving, she can kick ass and take names. After spending two years as a mall security guard in Camden, NJ, she's ready to kick ass and take names.
+			- speed (1/10) - hunting
+			- camping skills (1/10) - making a fire
+			- handling weapons (5/10) - hunting, killing zombies
+			- defense construction (5/10)
+			- setting up traps (5/10)
+			- first aid (1/10)
+		Chad - Chad's into mushrooms. He's so into mushrooms that he has learned to set traps around the woods to make sure critters don't eat mushrooms that he'll smack down on. Chad is a drug dealer, but ironically the mushrooms he hunts in the woods are Maitake mushrooms.
+			- speed (1/10) - hunting
+			- camping skills (1/10) - making a fire
+			- handling weapons (1/10) - hunting, killing zombies
+			- defense construction (1/10)
+			- setting up traps (10/10)
+			- first aid (3/10)
+
+	- you find a weapon. Who do you give it to?
+		- me, the other two people
+
+	- what do you want to do?
+		- travel via car
+		- hunt
+		- scavenge

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<style type="text/css">
+		body {
+		  padding-top: 50px;
+		}
+		.starter-template {
+		  padding: 40px 15px;
+		}
+
+		.margin-up {
+			margin-top: 25px;
+		}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Exercise 4</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Home</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	    <h1 id="main-heading" class="text-center">Resumes</h1>
+	    <p class="lead text-center" id="heading-text">What should your resume look like?</p>
+
+	    <div class="row">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<p>make two resumes</p>
+	    		<ul>
+	    			<li>one for search engines full of keywords
+	    				<ul>
+	    					<li>bad resume don't bring this in </li>
+	    					<li>good resume for search engines and databases</li>
+	    				</ul>
+	    			</li>
+
+	    			<li>clean one for when you come in for an interview </li>
+	    		</ul>
+
+	    		<h3>Resume would look kind of like this</h3>
+	    		<ul>
+	    			<li>project 1: An RPG game made with HTML, CSS, JS, jQuery (github link)</li>
+	    			<li>project 2: data scraped espn with node, cheerio and stored into mongoDB for later use (github link)</li>
+	    			<li>project 3: full stack project with html,css, js, jQuery, angular, node and mongoDB (github link)</li>
+	    		</ul>
+	    				
+	    		<h2>colors</h2>
+	    		<ul>
+	    			<li>blue</li>
+	    			<li>green</li>
+	    			<li>red</li>
+	    			<li>green</li>
+	    			<li>red</li>
+	    			<li>blue</li>
+	    		</ul>
+
+	    		<button id="set-colors">set list colors</button>
+	    		<button id="reset-colors">reset list colors</button>
+	    		<button id="show-image-of-text">show image of text</button>
+
+	    		<h2>if, else if, else, html()</h2>
+	    		<div id="text-value">city</div>
+
+	    		<div id="image">
+
+	    		</div>
+	    	</div>
+	    </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			function replaceTextImage(){
+				var check = $('#text-value').text();
+
+				if(check == 'city'){
+					$('#image').html("<img src='http://media.giphy.com/media/uEN3lGsG12Vqg/giphy.gif'>");
+				}else if(check == 'agent'){
+					$('#image').html("<img src='https://38.media.tumblr.com/7cfa864e78c7d59bcd98c1f8949a787a/tumblr_mtdmh1p9Ux1sp0gvao1_500.gif'>");
+				}else if(check == 'dog'){
+					$('#image').html("<img src='http://media.giphy.com/media/7d7Tow15pX0Uo/giphy.gif' alt='under dog'>");
+				}else{
+					console.log('https://emmgannon.files.wordpress.com/2012/07/cat.jpg');
+				}
+			}
+
+			$('#set-colors').on('click', function(){
+				$( "li" ).each(function( index ) {
+				  $(this).css('color', $( this ).text());
+				});
+			});
+
+			$('#reset-colors').on('click', function(){
+				$( "li" ).each(function( index ) {
+				  $(this).css('color', '');
+				});
+			});
+
+			$('#show-image-of-text').on('click', function(){
+				replaceTextImage();
+			});
+
+		});
+	</script>
+
+</body>
+</html>

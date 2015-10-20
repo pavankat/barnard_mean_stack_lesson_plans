@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///Users/pavankatepalli/Desktop/git/intro-to-js/5/resumes.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<style type="text/css">
+		.marginUp {
+			margin-top: 75px;
+		}
+
+		.marginDown {
+			margin-bottom: 200px;
+		}
+
+		.marginUpSmall {
+			margin-top: 25px;
+		}
+
+		.marginDownSmall{
+			margin-bottom: 25px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Exercise 5</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">Home</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div>
+	</nav>
+
+	<div class="container">
+
+	  <div class="starter-template">
+	  	<h1 id="main-heading" class="text-center marginUp">Calculator</h1>
+	  	<p class="lead text-center" id="heading-text">calculating time</p>
+
+	    <div class="row marginDown">
+	    	<div class="col-md-6 col-md-offset-4">
+	    		<div id="number">9</div>
+	    		<button id="go-up">Go up</button>
+	    		<button id="go-down">Go down</button>
+	    		<button id="times-two">times it by 2</button>
+	    		<button id="divides-two">divide it by 2</button>
+	    		<button id="go-down-by-10">go down by 10</button>
+	    		<button id="go-up-by-10">go up by 10</button>
+	    	</div>
+	    </div>
+	  </div>
+
+	</div><!-- /.container -->
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			function goUp(){
+				var getNum = $('#number').text();
+
+				getNum = parseInt(getNum);
+
+				getNum = getNum + 1;
+
+				$('#number').html(getNum);
+
+			}
+
+			//put in function code to go down
+			function goDown(){
+				alert('hi');
+			}
+
+			//put in function code to times it by 2
+			function timesTwo(){
+				alert('bye');
+			}
+
+			//put in function code to divide it by 2
+			function goDivideTwo(){
+				alert('cry');
+			}
+
+			//put in function code to go down by 10
+			function goDownTen(){
+				alert('sigh');
+			}
+
+			//put in function code to go up by 10
+			function goUpTen(){
+				alert('lie');
+			}
+
+			$('#go-up').on('click', function(){
+				goUp();
+			});
+
+			//put in on click code to go down here
+			$('#go-down').on('click', function(){
+				goDown();
+			});
+
+			//put in on click code to times it by 2 here
+			$('#times-two').on('click', function(){
+				timesTwo();
+			});
+
+			//put in on click code to divide it by 2 here
+			$('#divides-two').on('click', function(){
+				goDivideTwo();
+			});
+
+			//put in on click code to go down by 10 here
+			$('#go-down-by-10').on('click', function(){
+				goDownTen();
+			});
+			
+			//put in on click code to go up by 10 here
+			$('#go-up-by-10').on('click', function(){
+				goUpTen();
+			});
+
+
+		});
+	</script>
+
+
+</body></html>
