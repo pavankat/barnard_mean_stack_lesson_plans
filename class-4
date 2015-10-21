@@ -20,7 +20,7 @@ Objectives:
 	- add elements to the document 
 	- and remove elements from the document
 
-
+	- use data attributes on elements to be able to store data inside elements without visually showing the data
 
 - need to finish updating objectives
 - need to finish putting the examples and exercises into the normal repo
@@ -118,10 +118,35 @@ I do
 You do
 	//in regards to example-6.html
 
-	* show students the html after 
+	* show students the html after the "add another button above" link is clicked.
 
-	//why did 
+	* 
+		show students how the other buttons still work
 
+		show how the new button doesn't work
+
+		show students how the javascript isn't even being executed with break points on 
+			$('button').on('click', function(){ 
+		and 
+			after 
+	* 
+
+	//break students into groups with leaders - each group will come up with reasons
+	//Question: why isn't the newly added button alerting the value in the data attribute
+
+	//Answer: don't answer it do this. Let them make observations.
+
+	* modify code to make it work *
+
+		$( document ).on('click', 'button', function(){
+			var part = $(this).data('tvshow');
+
+			alert(part);
+		});
+
+	//Question for groups: why does it work now?
+
+		//Answer: you know for sure the document exists - and you know for sure it did load - so since you're attaching the event to the document - it will work on any newly created buttons
 
 
 
