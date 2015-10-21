@@ -22,15 +22,9 @@ Objectives:
 
 	- use data attributes on elements to be able to store data inside elements without visually showing the data
 
-- need to finish updating objectives
-- need to finish putting the examples and exercises into the normal repo
+- students will brainstorm their games, pseudocode it out and start working on the code
 
 // get the dates that we don't have class
-
-// brain storm game at the end of class
-// - pseduo code in class and submit to me before class ends - please submit it to me by the end of the weekend
-
-//students should be able to make an rpg game or a board game
 
 I do - 2 minutes
 	- show how $( document ).ready(function() { ... }); works
