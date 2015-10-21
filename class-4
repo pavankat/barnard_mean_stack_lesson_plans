@@ -101,7 +101,6 @@ I do
 	//BY REFERENCE
 		//oh, another thing that recently occured to me is that we need to talk about value vs reference because all of these vars that contain DOM objects are reference - that’s why you can change its properties and they change on screen
 
-//need some kind of exercise for this
 I do 
 	- Creating elements
 	- setting attributes of elements
@@ -109,6 +108,9 @@ I do
 	- removing elements from the document
 
 		- use example-4.html to explain
+
+You do
+	- exercise-7.html
 
 I do 
 	//Data attributes in jQuery
