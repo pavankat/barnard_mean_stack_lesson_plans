@@ -1,0 +1,13 @@
+Objectives:
+
+- students will be able to use Node.js, Cheerio (an npm package) to data scrape and mongoDB to store that data.
+
+- need to make sure they have node and mongo installed and robomongo installed
+
+- need to do an intro into node
+
+- run a hello world js program
+
+- pass arguments to the node program
+
+- 

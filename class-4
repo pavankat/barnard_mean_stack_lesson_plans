@@ -26,6 +26,8 @@ Objectives:
 
 - students will remember that there are no classes on these dates: Wed Nov 25 – Sun Nov 29, 2015 (EST)
 
+- students will put this in their records - skim through it - and use it when necessary for their games: https://github.com/AllThingsSmitty/jquery-tips-everyone-should-know
+
 I do - 2 minutes
 	- show how $( document ).ready(function() { ... }); works
 		- example-1.html			
