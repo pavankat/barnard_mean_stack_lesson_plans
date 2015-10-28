@@ -86,6 +86,7 @@
 	<script type="text/javascript">
 		$( document ).ready(function() {
 
+			//$(document.on('click', 'button', function(){
 			$('button').on('click', function(){
 				var part = $(this).data('tvshow');
 
@@ -97,7 +98,7 @@
 
 				newButton.html("the tv show's name");
 
-				newButton.data('tvshow', 'Captain Planet!');
+				newButton.attr('data-tvshow', 'Captain Planet!');
 
 				newButton.appendTo( $('#mainButtons') );
 			});
