@@ -1,0 +1,1 @@
+This is the instructor repository for an introduction to MEAN stack development at Barnard College as part of the Athena Center For Leadership Studies of Barnard College (https://athenacenter.barnard.edu).
