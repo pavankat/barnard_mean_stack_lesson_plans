@@ -10,4 +10,21 @@ Objectives:
 
 - pass arguments to the node program
 
-- 
+
+1. running a node program
+
+2. npm install the libraries
+
+3. require the libraries
+
+4. mongod --dbpath /Users/pavankatepalli/Desktop/git/barnard_mean_stack_lesson_plans/class5/data
+
+5. in a new tab
+	mongo
+
+	use nodetest2 (name of database)
+
+	db.westerns.find().pretty()
+	    - prints out the fried chicken spot results all pretty like
+
+	db.westerns.insert({'name' : 'Thunder Fried Chicken','url' : '194 23rd Street New York})

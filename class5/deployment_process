@@ -1,0 +1,10 @@
+deployment process for students:
+
+1. sign up for a heroku account online 
+2. download and install the heroku toolbelt
+https://devcenter.heroku.com/articles/getting-started-with-php#set-up
+
+in your app:
+
+1. index.php file
+2. inside the inside.php file require an html file

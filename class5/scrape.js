@@ -1,6 +1,4 @@
-
-//DB: spiritanimals
-//Seeded eastern & western table with names of animals already
+//DB: spiritAnimals
 
 //data scrape
 
@@ -9,8 +7,12 @@ var request = require('request');
 
 //cheerio to transverse through body of response
 var cheerio = require('cheerio');
-var pg = require("pg");
-var connectionString = "pg://localhost/spiritanimal";
+
+// Database Config to use mongodb and monk module
+// telling where the db lives and which database to use
+  var mongo = require('mongodb');
+  var monk = require('monk');
+  var db = monk('localhost:27017/spiritAnimals');
 
 //fn to determine if response is JSON
 function IsJsonString(str) {
@@ -22,48 +24,41 @@ function IsJsonString(str) {
     return true;
 };
 
+//this function sets up initial tables that 
+function setUp(){
+
+  western_signs = ["Aquarius", "Aries", "Cancer", "Capricorn", "Gemini", "Leo", "Libra", "Pisces", "Sagittarius", "Scorpio", "Taurus", "Virgo"];
+
+  eastern_signs = ["Dog", "Dragon", "Horse", "Monkey", "Ox", "Pig", "Rabbit", "Rat", "Rooster", "Sheep", "Snake", "Tiger"];
+
+  var westerns = db.get('westerns'); //let's you grab a collection
+  var easterns = db.get('easterns'); //let's you grab a collection
+
+  for(var i = 0; i < western_signs.length; i++){
+    westerns.insert({'name': western_signs[i]});
+  }
+
+  for(var i = 0; i < eastern_signs.length; i++){
+    easterns.insert({'name': eastern_signs[i]})
+  }
+
+}
+
+//setUp(); //only run this initially
+
+
 //fn to insert name/url into spirit_animal tables
 function insertSpiritAnimal(obj){
-  pg.connect(connectionString, function (err, client, done) {
-    console.log('inserted Spirit Animal', obj);
-
-    client.query('INSERT INTO spirit_animals (name, url) VALUES ($1, $2)', [obj.name, obj.url], function (err, result) {
-      console.log(err);
-
-      done();
-  
-    });
-  });
+  var spiritAnimals = db.get('spiritAnimals'); //let's you grab a collection
+  spiritAnimals.insert({name: obj.name , url: obj.url });
 }
 
-//fn to insert western_easterns
 function insertWesternEasterns(obj){
-  pg.connect(connectionString, function (err, client, done) {
-
-    client.query('SELECT * FROM western where name = $1', [obj.western_sign], function (err, western) {
-
-      var western_id = western.rows[0].id
-
-      client.query('SELECT * from eastern where name = $1', [obj.eastern_sign], function (errr, eastern) {
-
-        var eastern_id = eastern.rows[0].id;
-
-        client.query('SELECT * from spirit_animals where name = $1', [obj.primal_zodiac_sign], function (errr, spirit) {
-
-          var spirit_animal_id = spirit.rows[0].id;
-
-          client.query('INSERT INTO western_easterns (western_id, eastern_id, spirit_animal_id) VALUES ($1, $2, $3)', [western_id, eastern_id, spirit_animal_id], function (errr, spirit) {
-            done();
-          });
-
-        });
-
-      });
-      
-    });
-  }); 
+  var wes = db.get('western_eastern_spiritanimals'); //let's you grab a collection
+  wes.insert(obj);
 }
- 
+
+
 request('http://www.primalastrology.com/primal-zodiac-by-combination.html', function (error, response, html) {
   if (!error && response.statusCode == 200) {
 
@@ -94,7 +89,7 @@ request('http://www.primalastrology.com/primal-zodiac-by-combination.html', func
         //objects being pushed into western_easterns array
         westerns_easterns.push(we);
 
-        console.log(we);
+        //console.log(we);
 
         //taking the names and url
         obj = {};
@@ -103,7 +98,7 @@ request('http://www.primalastrology.com/primal-zodiac-by-combination.html', func
         //creating url key {url : www.blah.com} ex. {name : www.blah.com/whale}
         obj['url'] = tds.eq(4).children('a').eq(0).attr('href');
 
-        console.log(obj)
+        //console.log(obj)
 
         //objects being pushed into spirit_animals_urls
         spirit_animal_urls.push(obj)
@@ -116,8 +111,12 @@ request('http://www.primalastrology.com/primal-zodiac-by-combination.html', func
         insertSpiritAnimal(spirit_animal_urls[i]);
       }
 
+      //console.log(westerns_easterns);
+
       for (var i = 0; i < westerns_easterns.length; i++){
         insertWesternEasterns(westerns_easterns[i])
       }
   }
 });
+
+

@@ -1,0 +1,11 @@
+{
+	"name": "mongo-crud",
+	"main": "mongo-crud.js",
+	"scripts": {
+		"start": "node ./bin/www"
+	},
+	"dependencies": {
+		"mongodb": "~2.0.33",
+		"monk": "1.0.1"
+	}
+}
